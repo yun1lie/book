@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 public class InfBook {
     private Integer bookId;
     private String bookNum;
+    private String bookName;
     private String author;
     private String bookConcern;
     private String publishTime;

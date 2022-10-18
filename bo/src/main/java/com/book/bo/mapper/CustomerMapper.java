@@ -1,9 +1,9 @@
 package com.book.bo.mapper;
 
 import com.book.bo.entity.Customer;
-import org.apache.ibatis.annotations.Delete;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.*;
+
+import java.util.List;
 
 @Mapper
 public interface CustomerMapper {
@@ -15,6 +15,21 @@ public interface CustomerMapper {
     int insertCustomer(Customer customer);
 
     //删除用户
-    @Delete("DELETE FROM `book`.`tb_customer` WHERE `userid` = 1")
+    @Delete("DELETE FROM `book`.`tb_customer` WHERE `userid` = #{userId}")
     int deleteCustomer(Customer customer);
+
+    //修改用户信息
+    @Update("UPDATE `book`.`tb_customer`" +
+            " SET `username` = #{userName}, `headimage` = #{headImage}, `userpwd` = #{userPwd}, `City` = #{city}, `address` = #{address}, " +
+            "`postcode` =  #{postCode}, `cardnum` = #{cardNum}, `cardtype` = #{cardType}, `Grade` = #{grade}, `amount` = #{amount}, " +
+            "`Tel` = #{tel}, `email` = #{email}, `freeze` = #{freeze} WHERE `userid` = #{userId}")
+    int updateCustomer(Customer customer);
+
+    //查询用户信息
+    @Select("select * from `book`.`tb_customer`")
+    List<Customer> selectAllCustomer();
+
+    //按照用户id查询
+    @Select("select * from `book`.`tb_customer` WHERE  `userid` = #{userId}")
+    List<Customer> selectCustomerById(Customer customer);
 }
