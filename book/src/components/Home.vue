@@ -5,30 +5,7 @@
     </div>
 
     <div class="container">
-      <!-- Nav -->
-      <nav class="main-nav">
-        <img
-          src="@/assets/pic/bookIcon.jpeg"
-          alt="Microsoft"
-          class="logo"
-          style="width: 60px; height: 60px"
-        />
-
-        <ul class="main-menu">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">New Books</a></li>
-          <li><a href="#">Best selling books</a></li>
-          <li><a href="#">Recommended Books</a></li>
-          <li><a href="#">Search books</a></li>
-          <li><a href="#">Book classification</a></li>
-        </ul>
-
-        <ul class="right-menu">
-          <li><a href="#">sign in</a></li>
-          <li><a href="#">sign up</a></li>
-        </ul>
-      </nav>
-
+      <TheNav></TheNav>
       <!-- Showcase -->
       <header class="showcase">
         <h2>New Books</h2>
@@ -80,54 +57,67 @@
       <!-- Xbox -->
       <section class="xbox">
         <div class="content">
-          <img style="width: 80%" src="./pic/UN.png" alt="" />
-          <h2 style="color: white"></h2>
+          <h2 style="color: white">Book recommendations</h2>
           <p style="color: white">
-            UNICEF works in over 190 countries and territories to save
-            children's lives, to defend their rights, and to help them fulfil
-            their potential, from early childhood through adolescence. And we
-            never give up.
+            Reading is to discuss not only firewood, rice, oil, salt, sauce and
+            vinegar tea with your lover in the future, but also about any other
+            thing you love, such as qinqi, calligraphy, painting, poetry hops,
+            etc. Spending time in reading, even if materially poor, is extremely
+            rich spiritually.
           </p>
-          <br /><br /><br />
-          <a href="https://www.unicef.cn/en/take-action/donate-monthly" class="btn">
-            Donate Now <i class="fas fa-chevron-right"></i>
-          </a>
+          <br /><br />
+          <router-link to="/"> <a class="btn"> Read Now <i class="fas fa-chevron-right"></i>
+          </a></router-link>
+         
         </div>
       </section>
 
       <!-- Home cards 2 -->
       <section class="home-cards">
         <div>
-          <img src="./pic/UN1.jpg" alt="" />
+          <img src="./pic/1.jpg" alt="" />
           <h3>The Work of UNICEF</h3>
-          <p>Find out how UNICEF drives change for children and young people every day, across the globe.</p>
-          <br>
-          <a href="https://www.unicef.org/what-we-do">Click to view<i class="fas fa-chevron-right"></i></a>
+          <p>
+            Find out how UNICEF drives change for children and young people
+            every day, across the globe.
+          </p>
+          <br />
+          <a href="https://www.unicef.org/what-we-do"
+            >Click to view<i class="fas fa-chevron-right"></i
+          ></a>
         </div>
         <div>
-          <img src="./pic/UNICEF.png" alt="" />
+          <img src="./pic/1.jpg" alt="" />
           <h3>Research and reports</h3>
           <p>
-            UNICEF’s work is grounded in empirical data, rigorous research and thoughtful analysis.
+            UNICEF’s work is grounded in empirical data, rigorous research and
+            thoughtful analysis.
           </p>
-          <br>
-          <a href="https://www.unicef.org/research-and-reports">Click to view<i class="fas fa-chevron-right"></i></a>
+          <br />
+          <a href="https://www.unicef.org/research-and-reports"
+            >Click to view<i class="fas fa-chevron-right"></i
+          ></a>
         </div>
         <div>
-          <img src="./pic/UN2.jpg" alt="" />
+          <img src="./pic/1.jpg" alt="" />
           <h3>Stories and features</h3>
           <p>Beyond the headlines, every child has a story.</p>
-          <br><br>
-          <a href="https://www.unicef.org/stories">Click to view <i class="fas fa-chevron-right"></i></a>
+          <br /><br />
+          <a href="https://www.unicef.org/stories"
+            >Click to view <i class="fas fa-chevron-right"></i
+          ></a>
         </div>
         <div>
-          <img src="./pic/UN3.jpg" alt="" />
+          <img src="./pic/1.jpg" alt="" />
           <h3>Take action</h3>
           <p>
-            Join us to make a direct impact in the lives of the world’s most vulnerable children.
+            Join us to make a direct impact in the lives of the world’s most
+            vulnerable children.
           </p>
-          <br>
-          <a href="https://www.unicef.org/take-action">Click to view <i class="fas fa-chevron-right"></i></a>
+          <br />
+          <a href="https://www.unicef.org/take-action"
+            >Click to view <i class="fas fa-chevron-right"></i
+          ></a>
         </div>
       </section>
 
@@ -239,6 +229,7 @@
 </template>
 
 <script>
+import TheNav from './TheNav/TheNav.vue';
 window.onload = function () {
   document
     .querySelector(".menu-btn")
@@ -247,10 +238,10 @@ window.onload = function () {
     );
 };
 
-export default {};
+export default { components: { TheNav } };
 </script>
 
-<style>
+<style scoped>
 * {
   box-sizing: border-box;
   margin: 0;
@@ -280,40 +271,6 @@ ul {
   margin: auto;
 }
 
-/* Nav */
-.main-nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 60px;
-  padding: 20px 0;
-  font-size: 13px;
-}
-
-.main-nav .logo {
-  width: 110px;
-}
-
-.main-nav ul {
-  display: flex;
-}
-
-.main-nav ul li {
-  padding: 0 10px;
-}
-
-.main-nav ul li a {
-  padding-bottom: 2px;
-}
-
-.main-nav ul li a:hover {
-  border-bottom: 2px solid #262626;
-}
-
-.main-nav ul.main-menu {
-  flex: 1;
-  margin-left: 20px;
-}
 
 .menu-btn {
   cursor: pointer;
