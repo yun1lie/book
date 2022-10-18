@@ -52,9 +52,7 @@
         <div>
           <img src="@/assets/pic/sellBook.jpeg" alt="" />
           <h3>Best selling books</h3>
-          <p>
-            The hottest book in October 2022
-          </p>
+          <p>The hottest book in October 2022</p>
           <a href="#">Learn More <i class="fas fa-chevron-right"></i></a>
         </div>
         <div>
@@ -67,7 +65,7 @@
           <a href="#">Learn More <i class="fas fa-chevron-right"></i></a>
         </div>
         <div>
-          <img src="https://i.ibb.co/G57P0Pb/card4.png" alt="" />
+          <img src="@/assets/pic/lBook.jpeg" alt="" />
           <h3>Book classification</h3>
           <p>
             Expect more. World class performance, with more privacy, more
@@ -375,6 +373,8 @@ ul {
 
 .home-cards img {
   width: 100%;
+  height: 177.5px;
+
   margin-bottom: 20px;
 }
 
