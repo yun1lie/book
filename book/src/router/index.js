@@ -14,10 +14,6 @@ const router = new VueRouter({
       path: "/login",
       component: () => import("@/components/Login/login.vue"),
     },
-    {
-      path: "/register",
-      component: () => import("@/components/Login/register.vue"),
-    },
   ],
 });
 

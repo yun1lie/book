@@ -36,17 +36,19 @@
             <h2>Time to feel like home,</h2>
             <label>
               <span>UserName</span>
-              <input type="text" />
-            </label>
-            <label>
-              <span>username</span>
-              <input type="username" />
+              <input type="text" v-model="signUp.userName" />
             </label>
             <label>
               <span>Password</span>
-              <input type="password" />
+              <input type="password" v-model="signUp.userPwd" />
             </label>
-            <button type="button" class="submit">Sign Up</button>
+            <label>
+              <span>Re enter Password</span>
+              <input type="password" v-model="signUp.rePwd" />
+            </label>
+            <button type="button" class="submit" @click="signup">
+              Sign Up
+            </button>
           </div>
         </div>
       </div>
@@ -63,13 +65,14 @@ export default {
 
   data() {
     return {
-      signin: {
-        // userId:"",
+      signUp: {
         userName: "",
         userPwd: "",
-        // headimage:"",
-        // userpwd:"",
-        // city:"",
+        rePwd: "",
+      },
+      signin: {
+        userName: "",
+        userPwd: "",
       },
     };
   },
@@ -77,6 +80,30 @@ export default {
   mounted() {},
 
   methods: {
+    signup() {
+      if (
+        this.signUp.userName == "" ||
+        this.signUp.userPwd == "" ||
+        this.signUp.rePwd == ""
+      ) {
+        alert("The input does not conform to the rules, and output again");
+      } else {
+        axios({
+          url: "/api/insertCustomer",
+          method: "post",
+          data: this.signUp,
+        }).then((data) => {
+          console.log(data.data);
+          if (data.data == 1) {
+            alert("sign up sucessful!");
+          } else if (data.data == 0) {
+            alert("The user name already exists, please change it");
+          } else {
+            alert("unknown error");
+          }
+        });
+      }
+    },
     signIn() {
       axios({
         url: "/api/customerLogin",

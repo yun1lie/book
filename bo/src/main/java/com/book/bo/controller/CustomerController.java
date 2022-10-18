@@ -17,43 +17,50 @@ public class CustomerController {
 
     //添加用户
     @PostMapping("/insertCustomer")
-    int insertCustomer(@RequestBody Customer customer){
+    int insertCustomer(@RequestBody Customer customer) {
+        List<Customer> customerList = customerMapper.selectCustomerByName(customer);
+        try {
+            if (customerList.size() > 0) {
+                return 0;
+            }
+        } catch (Exception e) {
+        }
         return customerMapper.insertCustomer(customer);
     }
 
     //删除用户
     @PostMapping("/deleteCustomer")
-    int deleteCustomer(@RequestBody Customer customer){
+    int deleteCustomer(@RequestBody Customer customer) {
         return customerMapper.deleteCustomer(customer);
     }
 
     //修改用户信息
     @PostMapping("/updateCustomer")
-    int updateCustomer(@RequestBody Customer customer){
+    int updateCustomer(@RequestBody Customer customer) {
         return customerMapper.updateCustomer(customer);
     }
 
     //查询所有用户
     @GetMapping("/getAllCustomer")
-    List<Customer> getAllCustomer(){
+    List<Customer> getAllCustomer() {
         return customerMapper.selectAllCustomer();
     }
 
     //按照id查询用户
     @PostMapping("/selectCustomer")
-    List<Customer> selectCustomer(@RequestBody Customer customer){
+    List<Customer> selectCustomer(@RequestBody Customer customer) {
         return customerMapper.selectCustomerById(customer);
     }
 
     @PostMapping("/customerLogin")
-    List<Customer> customerLogin(@RequestBody Customer customer){
-        try{
+    List<Customer> customerLogin(@RequestBody Customer customer) {
+        try {
             List<Customer> customerList = customerMapper.selectCustomerByName(customer);
             Customer customer1 = customerList.get(0);
-            if (customer1.getUserName().equals(customer.getUserName()) && customer1.getUserPwd().equals(customer.getUserPwd())){
+            if (customer1.getUserName().equals(customer.getUserName()) && customer1.getUserPwd().equals(customer.getUserPwd())) {
                 return customerList;
             }
-        }catch (Exception e){
+        } catch (Exception e) {
 
         }
         return null;

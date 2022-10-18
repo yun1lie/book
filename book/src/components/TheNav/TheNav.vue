@@ -20,15 +20,12 @@
         <li><a href="#">Book classification</a></li>
       </ul>
 
-      <ul class="right-menu" v-if="this.customer == ''">
+      <ul class="right-menu" v-if="this.customer == null">
         <router-link to="/login"
           ><li><a>Sign in</a></li></router-link
         >
-        <router-link to="/register"
-          ><li><a>Sign up</a></li></router-link
-        >
       </ul>
-      <ul class="right-menu" v-if="this.customer != ''">
+      <ul class="right-menu" v-if="this.customer != null">
         <router-link to="/"
           ><li>
             <a>{{ this.customer.userName }}</a>
