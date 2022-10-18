@@ -31,6 +31,11 @@
             <a>{{ this.customer.userName }}</a>
           </li></router-link
         >
+        <router-link to="/"
+          ><li>
+            <a>Logout</a>
+          </li></router-link
+        >
       </ul>
     </nav>
   </div>
@@ -58,6 +63,7 @@ export default {
   width: 90%;
   max-width: 1100px;
   margin: auto;
+  background-color: white;
 }
 a {
   color: #262626;

@@ -127,9 +127,12 @@ export default {
 </script>
 
 <style lang="css" scoped>
+.bigLogin{
+  background: #ededed;
+}
 .login {
   margin-top: 7%;
-  background: #ededed;
+  height: 800px;
 }
 
 *,
