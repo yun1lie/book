@@ -1,9 +1,9 @@
 package com.book.bo.controller;
 
 import com.book.bo.entity.InfBook;
-import com.book.bo.mapper.CustomerMapper;
 import com.book.bo.mapper.InfBookMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -36,7 +36,7 @@ public class BookController {
         return infBookMapper.findBook(infBook);
     }
 
-    @PostMapping("/findAllBook")
+    @GetMapping("/findAllBook")
     List<InfBook> findAllBook(){
         return infBookMapper.findAllBook();
     }
