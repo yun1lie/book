@@ -1,13 +1,13 @@
 spring:
   datasource:
-    driver-class-name:com.mysql.cj.jdbc.Driver
-    name:defaultDataSource
-    url:jdbc:mysql://localhost:3306/book?serverTimezone=GMT%2b8
-    username:root
-    password:root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    name: defaultDataSource
+    url: jdbc:mysql://localhost:3306/book?serverTimezone=GMT%2b8
+    username: root
+    password: root
   application:
-    name:book
+    name: book
 server:
-  port:5000
+  port: 5000
 mybatis:
-  mapper-loations:classpath:mapper/*.xml
+  mapper-loations: classpath:mapper/*.xml
