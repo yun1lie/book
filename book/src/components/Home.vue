@@ -47,12 +47,14 @@
           <img src="@/assets/pic/NewBook.jpeg" alt="" />
           <h3>New Book</h3>
           <p>The new book is on the market and is in hot sale.</p>
+          <br />
           <a href="#">Learn More <i class="fas fa-chevron-right"></i></a>
         </div>
         <div>
           <img src="@/assets/pic/sellBook.jpeg" alt="" />
           <h3>Best selling books</h3>
           <p>The hottest book in October 2022</p>
+          <br /><br />
           <a href="#">Learn More <i class="fas fa-chevron-right"></i></a>
         </div>
         <div>
@@ -78,14 +80,17 @@
       <!-- Xbox -->
       <section class="xbox">
         <div class="content">
-          <h2>Xbox Game Pass Ultimate</h2>
-          <p>
-            Xbox Game Pass Ultimate Xbox Live Gold and over 100 high-quality
-            console and PC games. Play together with friends and discover your
-            next favorite game.
+          <img style="width: 80%" src="./pic/UN.png" alt="" />
+          <h2 style="color: white"></h2>
+          <p style="color: white">
+            UNICEF works in over 190 countries and territories to save
+            children's lives, to defend their rights, and to help them fulfil
+            their potential, from early childhood through adolescence. And we
+            never give up.
           </p>
-          <a href="#" class="btn">
-            Join Now <i class="fas fa-chevron-right"></i>
+          <br /><br /><br />
+          <a href="https://www.unicef.cn/en/take-action/donate-monthly" class="btn">
+            Donate Now <i class="fas fa-chevron-right"></i>
           </a>
         </div>
       </section>
@@ -93,33 +98,36 @@
       <!-- Home cards 2 -->
       <section class="home-cards">
         <div>
-          <img src="https://i.ibb.co/zVqhWn2/card5.png" alt="" />
-          <h3>Microsoft Teams</h3>
-          <p>Unleash the power of your team.</p>
-          <a href="#">Shop Now <i class="fas fa-chevron-right"></i></a>
+          <img src="./pic/UN1.jpg" alt="" />
+          <h3>The Work of UNICEF</h3>
+          <p>Find out how UNICEF drives change for children and young people every day, across the globe.</p>
+          <br>
+          <a href="https://www.unicef.org/what-we-do">Click to view<i class="fas fa-chevron-right"></i></a>
         </div>
         <div>
-          <img src="https://i.ibb.co/mGZcxcn/card6.jpg" alt="" />
-          <h3>Unlock the power of learning</h3>
+          <img src="./pic/UNICEF.png" alt="" />
+          <h3>Research and reports</h3>
           <p>
-            Get students future-ready with Windows 10 devices. Starting at $219.
+            UNICEF’s work is grounded in empirical data, rigorous research and thoughtful analysis.
           </p>
-          <a href="#">Shop Now <i class="fas fa-chevron-right"></i></a>
+          <br>
+          <a href="https://www.unicef.org/research-and-reports">Click to view<i class="fas fa-chevron-right"></i></a>
         </div>
         <div>
-          <img src="https://i.ibb.co/NpPvVHj/card7.png" alt="" />
-          <h3>Windows 10 Enterprise</h3>
-          <p>Download the free 90-day evaluation for IT professionals.</p>
-          <a href="#">Download Now <i class="fas fa-chevron-right"></i></a>
+          <img src="./pic/UN2.jpg" alt="" />
+          <h3>Stories and features</h3>
+          <p>Beyond the headlines, every child has a story.</p>
+          <br><br>
+          <a href="https://www.unicef.org/stories">Click to view <i class="fas fa-chevron-right"></i></a>
         </div>
         <div>
-          <img src="https://i.ibb.co/LkP4L5T/card8.png" alt="" />
-          <h3>Explore Kubernetes</h3>
+          <img src="./pic/UN3.jpg" alt="" />
+          <h3>Take action</h3>
           <p>
-            Learn how Kubernetes works and get started with cloud native app
-            development today.
+            Join us to make a direct impact in the lives of the world’s most vulnerable children.
           </p>
-          <a href="#">Get Started <i class="fas fa-chevron-right"></i></a>
+          <br>
+          <a href="https://www.unicef.org/take-action">Click to view <i class="fas fa-chevron-right"></i></a>
         </div>
       </section>
 
@@ -398,8 +406,7 @@ ul {
 .xbox {
   width: 100%;
   height: 350px;
-  background: url("https://i.ibb.co/tBJGPD9/xbox.png") no-repeat center
-    center/cover;
+  background: url("./pic/1.jpg") no-repeat center center/cover;
   margin-bottom: 20px;
 }
 
