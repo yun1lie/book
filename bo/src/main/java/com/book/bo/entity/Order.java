@@ -7,19 +7,18 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Customer {
-    private Integer userId;
+public class Order {
+    private Integer orderId;
+    private String bookName;
     private String userName;
-    private String headImage;
-    private String userPwd;
-    private String city;
     private String address;
     private String postCode;
-    private String cardNum;
-    private String cardType;
-    private String grade;
-    private String amount;
     private String tel;
     private String email;
-    private Integer freeze;
+    private String payment;
+    private String transportMode;
+    private Double rebate;
+    private String orderDate;
+    private String bz;
+    private Integer enforce;
 }
