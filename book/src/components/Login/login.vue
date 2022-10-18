@@ -1,19 +1,19 @@
 <template>
-  <div>
+  <div class="bigLogin">
     <TheNav></TheNav>
     <div class="login">
       <div class="cont">
         <div class="form sign-in">
           <h2>Welcome back,</h2>
           <label>
-            <span>Email</span>
-            <input type="email" />
+            <span>username</span>
+            <input type="username" v-model="signin.userName" />
           </label>
           <label>
             <span>Password</span>
-            <input type="password" />
+            <input type="password" v-model="signin.userPwd" />
           </label>
-          <button type="button" class="submit">Sign In</button>
+          <button type="button" class="submit" @click="signIn">Sign In</button>
         </div>
         <div class="sub-cont">
           <div class="img">
@@ -27,7 +27,7 @@
                 If you already has an account, just sign in. We've missed you!
               </p>
             </div>
-            <div class="img__btn">
+            <div class="img__btn" @click="reload">
               <span class="m--up">Sign Up</span>
               <span class="m--in">Sign In</span>
             </div>
@@ -39,8 +39,8 @@
               <input type="text" />
             </label>
             <label>
-              <span>Email</span>
-              <input type="email" />
+              <span>username</span>
+              <input type="username" />
             </label>
             <label>
               <span>Password</span>
@@ -50,39 +50,59 @@
           </div>
         </div>
       </div>
-
-      
     </div>
   </div>
 </template>
 <script>
-import TheNav from '../TheNav/TheNav.vue';
-
-
-window.onload = function () {
-  document.querySelector(".img__btn").addEventListener("click", function () {
-    document.querySelector(".cont").classList.toggle("s--signup");
-  });
-};
+import axios from "axios";
+import TheNav from "../TheNav/TheNav.vue";
 
 export default {
   name: "BookLogin",
   components: { TheNav },
 
   data() {
-    return {};
+    return {
+      signin: {
+        // userId:"",
+        userName: "",
+        userPwd: "",
+        // headimage:"",
+        // userpwd:"",
+        // city:"",
+      },
+    };
   },
 
   mounted() {},
 
-  methods: {},
+  methods: {
+    signIn() {
+      axios({
+        url: "/api/customerLogin",
+        method: "post",
+        data: this.signin,
+      }).then((data) => {
+        if (data.data.length > 0) {
+          alert("log sucessful");
+          sessionStorage.setItem("customer", JSON.stringify(data.data[0]));
+          this.$router.push("/");
+        } else {
+          alert("User name or password error");
+        }
+      });
+    },
+    reload() {
+      document.querySelector(".cont").classList.toggle("s--signup");
+    },
+  },
 };
-
 </script>
 
 <style lang="css" scoped>
 .login {
   margin-top: 7%;
+  background: #ededed;
 }
 
 *,

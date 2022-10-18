@@ -32,4 +32,7 @@ public interface CustomerMapper {
     //按照用户id查询
     @Select("select * from `book`.`tb_customer` WHERE  `userid` = #{userId}")
     List<Customer> selectCustomerById(Customer customer);
+
+    @Select("SELECT * FROM `book`.`tb_customer` WHERE  `username` = #{userName}")
+    List<Customer> selectCustomerByName(Customer customer);
 }

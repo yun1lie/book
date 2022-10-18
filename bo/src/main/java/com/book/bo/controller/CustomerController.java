@@ -44,4 +44,18 @@ public class CustomerController {
     List<Customer> selectCustomer(@RequestBody Customer customer){
         return customerMapper.selectCustomerById(customer);
     }
+
+    @PostMapping("/customerLogin")
+    List<Customer> customerLogin(@RequestBody Customer customer){
+        try{
+            List<Customer> customerList = customerMapper.selectCustomerByName(customer);
+            Customer customer1 = customerList.get(0);
+            if (customer1.getUserName().equals(customer.getUserName()) && customer1.getUserPwd().equals(customer.getUserPwd())){
+                return customerList;
+            }
+        }catch (Exception e){
+
+        }
+        return null;
+    }
 }

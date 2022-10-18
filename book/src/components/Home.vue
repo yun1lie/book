@@ -38,7 +38,7 @@
           <img src="@/assets/pic/reBook.jpeg" alt="" />
           <h3>Recommended Books</h3>
           <p>
-            Buy an Xbox One X console and double your fun with a free select
+            Buy an recommend One X console and double your fun with a free select
             extra controller. Starting at $349.
           </p>
           <a href="#">Learn More <i class="fas fa-chevron-right"></i></a>
@@ -54,8 +54,8 @@
         </div>
       </section>
 
-      <!-- Xbox -->
-      <section class="xbox">
+      <!-- recommend -->
+      <section class="recommend">
         <div class="content">
           <h2 style="color: white">Book recommendations</h2>
           <p style="color: white">
@@ -238,7 +238,8 @@ window.onload = function () {
     );
 };
 
-export default { components: { TheNav } };
+export default { components: { TheNav } ,
+};
 </script>
 
 <style scoped>
@@ -359,20 +360,20 @@ ul {
   margin-left: 10px;
 }
 
-/* Xbox */
-.xbox {
+/* recommend */
+.recommend {
   width: 100%;
   height: 350px;
   background: url("./pic/1.jpg") no-repeat center center/cover;
   margin-bottom: 20px;
 }
 
-.xbox .content {
+.recommend .content {
   width: 40%;
   padding: 50px 0 0 30px;
 }
 
-.xbox p,
+.recommend p,
 .carbon p {
   margin: 10px 0 20px;
 }
@@ -508,11 +509,11 @@ ul {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .xbox .content p {
+  .recommend .content p {
     display: none;
   }
 
-  .xbox .content h2 {
+  .recommend .content h2 {
     margin-bottom: 20px;
   }
 

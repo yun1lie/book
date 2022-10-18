@@ -10,7 +10,9 @@
       />
 
       <ul class="main-menu">
-        <li><router-link to="/"><a>Home</a></router-link></li>
+        <li>
+          <router-link to="/"><a>Home</a></router-link>
+        </li>
         <li><a href="#">New Books</a></li>
         <li><a href="#">Best selling books</a></li>
         <li><a href="#">Recommended Books</a></li>
@@ -18,19 +20,31 @@
         <li><a href="#">Book classification</a></li>
       </ul>
 
-      <ul class="right-menu">
-        <router-link to="/login"><li><a>Sign in</a></li></router-link>
-        <router-link to="/register"><li><a>Sign up</a></li></router-link>
+      <ul class="right-menu" v-if="this.customer == ''">
+        <router-link to="/login"
+          ><li><a>Sign in</a></li></router-link
+        >
+        <router-link to="/register"
+          ><li><a>Sign up</a></li></router-link
+        >
+      </ul>
+      <ul class="right-menu" v-if="this.customer != ''">
+        <router-link to="/"
+          ><li>
+            <a>{{ this.customer.userName }}</a>
+          </li></router-link
+        >
       </ul>
     </nav>
   </div>
 </template>
 
 <script>
-
-
 export default {
   name: "BookTheNav",
+  created() {
+    this.customer = JSON.parse(sessionStorage.getItem("customer"));
+  },
 
   data() {
     return {};
