@@ -89,9 +89,8 @@ export default {
       method: "post",
       data: this.customer,
     }).then((data) => {
-      console.log(this.customer);
       this.customer = data.data[0];
-      console.log(this.customer);
+
     });
   },
 

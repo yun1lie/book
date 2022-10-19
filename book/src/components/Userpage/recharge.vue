@@ -90,7 +90,7 @@ export default {
         return;
       }
 
-      console.log(this.rechargeParams);
+
       var payInfo = {
         userId: JSON.parse(sessionStorage.getItem("customer")).userId,
         amount: this.rechargeParams.totalAmt,
@@ -101,7 +101,7 @@ export default {
         data: payInfo,
       }).then((res) => {
         var result = res.result;
-        console.log(res.data);
+
         if (res.data === 1) {
           if (this.rechargeParams.paymentType == "0") {
             this.$message.success("Royal Bank of Canada");
@@ -118,10 +118,9 @@ export default {
     //微信支付
 
     wechatPay(result) {
-      console.log("result " + result);
+
 
       // sessionStorage.qrurl = result.qrurl;
-      // console.log("qrurl " + result.qrur);
       // sessionStorage.amt = this.rechargeParams.totalAmt;
       // this.$router.push({ path: "/code" });
     },

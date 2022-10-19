@@ -4,7 +4,9 @@
       <div class="cart-contain">
         <div class="cart-table-container">
           <div class="cart-filter-bar">
-            <span class="switch-cart">购物车（全部{{ cartTotalCount }}）</span>
+            <span class="switch-cart"
+              >Shopping Cart(whole{{ cartTotalCount }})</span
+            >
           </div>
           <div class="cart-list-content">
             <el-table
@@ -20,7 +22,7 @@
                 align="center"
                 width="50"
               ></el-table-column>
-              <el-table-column label="商品图片" width="180">
+              <el-table-column label="Book pictures" width="180">
                 <template slot-scope="scope">
                   <el-image
                     :src="scope.row.image"
@@ -39,11 +41,14 @@
                 </template>
               </el-table-column>
               <el-table-column
-                label="商品名称"
+                label="Book name"
                 prop="productName"
               ></el-table-column>
-              <el-table-column label="单价" prop="price"></el-table-column>
-              <el-table-column label="数量" width="220">
+              <el-table-column
+                label="Unit Price"
+                prop="price"
+              ></el-table-column>
+              <el-table-column label="quantity" width="220">
                 <template slot-scope="scope">
                   <el-input-number
                     setp="1"
@@ -54,18 +59,18 @@
                   ></el-input-number>
                 </template>
               </el-table-column>
-              <el-table-column label="金额">
+              <el-table-column label="amount of money">
                 <template slot-scope="scope">
                   <span>{{ scope.row.num * scope.row.price }}</span>
                 </template>
               </el-table-column>
-              <el-table-column label="操作" fixed="right" align="center">
+              <el-table-column label="operation" fixed="right" align="center">
                 <template slot-scope="scope">
                   <el-button
                     size="medium"
                     type="danger"
                     v-on:click="delGood(scope.row.id)"
-                    >删除</el-button
+                    >delete</el-button
                   >
                 </template>
               </el-table-column>
@@ -79,24 +84,24 @@
                     class="all-check-checkbox"
                     v-model="isAllChecked"
                     v-on:change="checkAll"
-                    >全选</el-checkbox
+                    >Select All</el-checkbox
                   >
                 </div>
               </span>
               <span class="all-del" v-show="isAllChecked">
                 <el-button type="danger" size="small" v-on:click="delAll"
-                  >删除</el-button
+                  >delete</el-button
                 >
               </span>
             </div>
             <div class="cart-sum">
-              <span class="pay-text">已选商品</span>
-              <span class="total-text">合计：</span>
+              <span class="pay-text">Selected items</span>
+              <span class="total-text">total:</span>
               <span class="total-symbol">{{ cartTotalPrice }}</span>
               <div v-if="selectionData.length > 0" class="pay-btn-active">
-                结算
+                settlement
               </div>
-              <div v-else class="pay-btn-inactive">结算</div>
+              <div v-else class="pay-btn-inactive">settlement</div>
             </div>
           </div>
         </div>
@@ -144,7 +149,7 @@
                   </div>
 
                   <div class="numbers">
-                    <div class="price">价格：{{ item.price * item.num }}</div>
+                    <div class="price">Price:{{ item.price * item.num }}</div>
                   </div>
                 </div>
                 <div class="cart-item-opera">
@@ -172,32 +177,33 @@
                 class="all-check-checkbox"
                 v-model="isAllChecked"
                 v-on:change="checkAll"
-                >全选</el-checkbox
+                >Select All</el-checkbox
               >
             </div>
             <div class="del-text" v-show="isAllChecked" v-on:click="delAll">
-              删除
+              delete
             </div>
           </div>
           <div class="rights">
-            合计：
+            total:
             <span class="total-pay-count">{{ cartTotalPrice }}</span>
           </div>
           <div v-if="selectionData.length > 0" class="settlement-active">
-            结算
+            settlement
           </div>
-          <div v-else class="settlement-inactive">结算</div>
+          <div v-else class="settlement-inactive">settlement</div>
         </div>
       </div>
       <!-- 如果购物车没有数据 -->
       <div class="cart-no-data" v-if="cartList.length == 0">
-        <div>没有数据</div>
+        <div>no data</div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import axios from "axios";
 export default {
   name: "shopCart",
   data() {
@@ -219,9 +225,20 @@ export default {
     };
   },
   created() {
+    //从后端获取到用户购物车信息
+    axios({
+      url: "/api/getCart",
+      method: "post",
+      data: JSON.parse(sessionStorage.getItem("customer")),
+    }).then((data) => {
+      console.log("aaa", data.data);
+      this.cartInfo = data.data;
+      this.cartList = data.data;
+    });
     let _this = this;
     // 初始化数据
     _this.initData();
+    console.log("bba", _this);
   },
   mounted() {
     let _this = this;
@@ -296,28 +313,31 @@ export default {
     // 获取购物车列表
     getList() {
       let _this = this;
-      _this.cartList = [
-        {
-          id: "2142423",
-          image: "",
-          productName: "测试商品1",
-          // 单价
-          price: 12,
-          // 购买数量
-          num: 1,
-          // 如果api返回的数据中没有类似checked这种判断是否选中的字段
-          // 可以在获取收据后 初始化时遍历添加一遍
-          checked: false,
-        },
-        {
-          id: "2142423424",
-          image: "",
-          productName: "测试商品2",
-          price: 32,
-          num: 2,
-          checked: false,
-        },
-      ];
+      _this.cartList = this.cartInfo;
+      console.log(_this);
+
+      // [
+      //   {
+      //     id: "2142423",
+      //     image: "",
+      //     productName: "测试商品1",
+      //     // 单价
+      //     price: 12,
+      //     // 购买数量
+      //     num: 1,
+      //     // 如果api返回的数据中没有类似checked这种判断是否选中的字段
+      //     // 可以在获取收据后 初始化时遍历添加一遍
+      //     checked: false,
+      //   },
+      //   {
+      //     id: "2142423424",
+      //     image: "",
+      //     productName: "测试商品2",
+      //     price: 32,
+      //     num: 2,
+      //     checked: false,
+      //   },
+      // ];
     },
 
     // 计算总价和总数量
@@ -365,9 +385,9 @@ export default {
     delAll() {
       let _this = this;
       _this
-        .$confirm("确定要删除全部商品吗?", "提示", {
-          confirmButtonText: "确定",
-          cancelButtonText: "取消",
+        .$confirm("Are you sure you want to delete all products?", "Tips", {
+          confirmButtonText: "determine",
+          cancelButtonText: "cancel",
           type: "warning",
         })
         .then(function () {
@@ -377,21 +397,19 @@ export default {
           // 删除后需要重新获取数据刷新页面
           //   _this.getList();
         })
-        .catch((e) => {
-          console.log(e);
-        });
+        .catch((e) => {});
     },
     // 单个删除
     delGood(id) {
       let _this = this;
       if (!id) {
-        _this.$message.error("商品有误，请刷新后重试");
+        _this.$message.error("Product error, please refresh and try again");
         return;
       }
       _this
-        .$confirm("确定要删除此商品吗?", "提示", {
-          confirmButtonText: "确定",
-          cancelButtonText: "取消",
+        .$confirm("Are you sure you want to delete this product?", "Tips", {
+          confirmButtonText: "determine",
+          cancelButtonText: "cancel",
           type: "warning",
         })
         .then(function () {
