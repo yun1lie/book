@@ -1,0 +1,109 @@
+<template>
+  <div>
+    <div>
+      <el-card>
+        <el-descriptions class="margin-top" title="简介" :column="2" border>
+          <template slot="extra">
+            <el-button type="primary" size="small">操作</el-button>
+          </template>
+          <el-descriptions-item>
+            <template slot="label">
+              <i class="el-icon-picture-outline"></i>
+              headimage
+            </template>
+            <img class="img" src="http://localhost:9090/static/headImg/1.jpg" />
+          </el-descriptions-item>
+          <el-descriptions-item>
+            <template slot="label">
+              <i class="el-icon-user"></i>
+              username
+            </template>
+            {{ username }}
+          </el-descriptions-item>
+          <el-descriptions-item>
+            <template slot="label">
+              <i class="el-icon-s-custom"></i>
+              city
+            </template>
+            {{ city }}
+          </el-descriptions-item>
+          <el-descriptions-item>
+            <template slot="label">
+              <i class="el-icon-odometer">address</i>
+            </template>
+            {{ address }}
+          </el-descriptions-item>
+          <el-descriptions-item>
+            <template slot="label"> postcode </template>
+            <el-tag size="small">{{ postcode }}</el-tag>
+          </el-descriptions-item>
+          <el-descriptions-item>
+            <template slot="label">
+              <i class="el-icon-message"></i>
+              Email
+            </template>
+            {{ email }}
+          </el-descriptions-item>
+          <el-descriptions-item>
+            <template slot="label">
+              <i class="el-icon-mobile-phone"></i>
+              Tel
+            </template>
+            {{ mobilePhoneNumber }}
+          </el-descriptions-item>
+          <el-descriptions-item>
+            <template slot="label">
+              <i class="el-icon-location-outline"></i>
+              cartype
+            </template>
+            {{ cartype }}
+          </el-descriptions-item>
+          <el-descriptions-item>
+            <template slot="label">
+              <i class="el-icon-office-building"></i>
+              card Number
+            </template>
+            {{ cardNum }}
+          </el-descriptions-item>
+
+          <el-descriptions-item>
+            <template slot="label">
+              <i class="el-icon-basketball"></i>
+              money
+            </template>
+            {{ money }}
+          </el-descriptions-item>
+        </el-descriptions>
+      </el-card>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  name: "Info",
+  data() {
+    return {
+      avatar: String,
+      username: String,
+      address: Number,
+      email: String,
+      mobilePhoneNumber: String,
+      cartype: String,
+      createDate: Number,
+      city: String,
+      postcode: String,
+      cardNum: String,
+      money: String,
+      design: String,
+    };
+  },
+};
+</script>
+
+<style  scoped>
+.img {
+  width: 80px;
+  height: 80px;
+}
+</style>

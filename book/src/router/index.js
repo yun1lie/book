@@ -16,6 +16,33 @@ const router = new VueRouter({
     {
       path: "/userPage",
       component: () => import("@/components/Userpage/userpage.vue"),
+      children: [
+        {
+          name: "Profile",
+          path: "/Profile",
+          component: () => import("@/components/Userpage/Profile.vue"),
+        },
+        {
+          name: "cart",
+          path: "/cart",
+          component: () => import("@/components/Userpage/cart.vue"),
+        },
+        {
+          name: "orders",
+          path: "/orders",
+          component: () => import("@/components/Userpage/orders.vue"),
+        },
+        {
+          name: "modify",
+          path: "/modify",
+          component: () => import("@/components/Userpage/modify.vue"),
+        },
+        {
+          name: "recharge",
+          path: "/recharge",
+          component: () => import("@/components/Userpage/recharge.vue"),
+        },
+      ],
     },
     //子路由乱七八糟的,不会写
     // {

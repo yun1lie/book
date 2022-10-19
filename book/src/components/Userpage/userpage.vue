@@ -35,40 +35,34 @@
             active-text-color="#00c3ff"
             class="el-menu-vertical-demo"
           >
-            <el-menu-item
-              index="info"
-              :route="{ name: 'info', params: $route.params.id }"
-            >
+            <el-menu-item index="info" :route="{ name: 'Profile', params: '' }">
               <i class="el-icon-user"></i>
-              <span slot="title">个人简介</span>
+              <span slot="title">Profile</span>
             </el-menu-item>
-            <el-menu-item
-              index="myarticle"
-              :route="{ name: 'myarticle', params: $route.params.id }"
-            >
+            <el-menu-item index="cart" :route="{ name: 'cart', params: '' }">
               <i class="el-icon-edit-outline"></i>
-              <span slot="title">发帖</span>
+              <span slot="title">View Cart</span>
             </el-menu-item>
             <el-menu-item
-              index="mycollect"
-              :route="{ name: 'mycollect', params: $route.params.id }"
+              index="orders"
+              :route="{ name: 'orders', params: '' }"
             >
               <i class="el-icon-document"></i>
-              <span slot="title">收藏</span>
+              <span slot="title">Submitted Orders</span>
             </el-menu-item>
             <el-menu-item
-              index="myfan"
-              :route="{ name: 'myfan', params: $route.params.id }"
+              index="modify"
+              :route="{ name: 'modify', params: $route.params.id }"
             >
               <i class="el-icon-tableware"></i>
-              <span slot="title">粉丝</span>
+              <span slot="title">Modify personal info</span>
             </el-menu-item>
             <el-menu-item
-              index="myfollow"
-              :route="{ name: 'myfollow', params: $route.params.id }"
+              index="recharge"
+              :route="{ name: 'recharge', params: $route.params.id }"
             >
               <i class="el-icon-circle-plus-outline"></i>
-              <span slot="title">关注</span>
+              <span slot="title">Account recharge</span>
             </el-menu-item>
           </el-menu>
         </el-card>
@@ -219,24 +213,6 @@ export default {
   border-radius: 5px;
   margin-right: 3%;
   text-align: center;
-}
-
-.person_body_list {
-  width: 100%;
-  height: 50px;
-  margin-top: 25px;
-  font-size: 22px;
-  border-bottom: 1px solid #f0f0f0;
-  background-image: -webkit-linear-gradient(
-    left,
-    rgb(42, 134, 141),
-    #e9e625dc 20%,
-    #3498db 40%,
-    #e74c3c 60%,
-    #09ff009a 80%,
-    rgba(82, 196, 204, 0.281) 100%
-  );
-  -webkit-text-fill-color: transparent;
 }
 
 .el-menu-item {

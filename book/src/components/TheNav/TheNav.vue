@@ -26,7 +26,7 @@
         >
       </ul>
       <ul class="right-menu" v-if="this.customer != null">
-        <router-link to="/"
+        <router-link to="/userPage"
           ><li>
             <a>{{ this.customer.userName }}</a>
           </li></router-link
