@@ -96,7 +96,7 @@ export default {
 };
 </script>
 
-<style >
+<style scoped>
 .userPage {
   height: 1000px;
   background-color: rgb(247, 248, 252);
