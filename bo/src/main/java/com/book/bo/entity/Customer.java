@@ -18,7 +18,7 @@ public class Customer {
     private String cardNum;
     private String cardType;
     private String grade;
-    private String amount;
+    private Double amount;
     private String tel;
     private String email;
     private Integer freeze;

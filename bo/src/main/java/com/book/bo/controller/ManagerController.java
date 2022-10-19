@@ -32,12 +32,12 @@ public class ManagerController {
     }
 
     @GetMapping("/findAllManager")
-    List<Manager> findAllManager(){
+    List<Manager> findAllManager() {
         return managerMapper.findAllManager();
     }
 
     @PostMapping("/findManager")
-    List<Manager> findManager(){
-        return managerMapper.findManager();
+    List<Manager> findManager(@RequestBody Manager manager) {
+        return managerMapper.findManager(manager);
     }
 }
