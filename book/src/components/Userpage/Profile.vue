@@ -18,20 +18,20 @@
               <i class="el-icon-user"></i>
               username
             </template>
-            {{ username }}
+            <el-input :placeholder="this.username" v-model="input" readonly=""></el-input>
           </el-descriptions-item>
           <el-descriptions-item>
             <template slot="label">
               <i class="el-icon-s-custom"></i>
               city
             </template>
-            {{ city }}
+             <el-input :placeholder="this.city" v-model="input" readonly=""></el-input>
           </el-descriptions-item>
           <el-descriptions-item>
             <template slot="label">
               <i class="el-icon-odometer">address</i>
             </template>
-            {{ address }}
+            <el-input :placeholder="this.address" v-model="input" readonly=""></el-input>
           </el-descriptions-item>
           <el-descriptions-item>
             <template slot="label"> postcode </template>
@@ -42,28 +42,28 @@
               <i class="el-icon-message"></i>
               Email
             </template>
-            {{ email }}
+             <el-input :placeholder="this.email" v-model="input" readonly=""></el-input>
           </el-descriptions-item>
           <el-descriptions-item>
             <template slot="label">
               <i class="el-icon-mobile-phone"></i>
               Tel
             </template>
-            {{ mobilePhoneNumber }}
+             <el-input :placeholder="this.mobilePhoneNumber" v-model="input" readonly=""></el-input>
           </el-descriptions-item>
           <el-descriptions-item>
             <template slot="label">
               <i class="el-icon-location-outline"></i>
               cartype
             </template>
-            {{ cartype }}
+             <el-input :placeholder="this.cartype" v-model="input" readonly=""></el-input>
           </el-descriptions-item>
           <el-descriptions-item>
             <template slot="label">
               <i class="el-icon-office-building"></i>
               card Number
             </template>
-            {{ cardNum }}
+             <el-input :placeholder="this.cardNum" v-model="input" readonly=""></el-input>
           </el-descriptions-item>
 
           <el-descriptions-item>
@@ -71,7 +71,7 @@
               <i class="el-icon-basketball"></i>
               money
             </template>
-            {{ money }}
+             <el-input :placeholder="this.money" v-model="input" readonly=""></el-input>
           </el-descriptions-item>
         </el-descriptions>
       </el-card>
@@ -96,6 +96,7 @@ export default {
       cardNum: String,
       money: String,
       design: String,
+       input: '',
     };
   },
 };

@@ -16,11 +16,11 @@
             <span> qianming {{ design }}</span>
           </div>
         </div>
-        <div class="userEdit">
-          <el-button class="el-icon-edit" type="primary" size="medium" plain
+        <!-- <div class="userEdit">
+          <el-button class="el-icon-edit" type="primary" size="medium" plain 
             >编辑</el-button
           >
-        </div>
+        </div> -->
       </div>
     </div>
     <div class="person_body">
@@ -68,7 +68,9 @@
             <el-menu-item>
               <i class="el-icon-circle-plus-outline"></i>
               <span slot="title"
-                ><router-link to="/">Back to Home</router-link></span
+                ><router-link class="span1" to="/"
+                  > Back to Home</router-link
+                ></span
               >
             </el-menu-item>
           </el-menu>
@@ -199,6 +201,12 @@ export default {
   color: #999;
 }
 
+.span1 {
+  text-decoration: none;
+  font-size: 16px;
+  color: #999;
+}
+
 .el-menu-item > span {
   font-size: 16px;
   color: #999;
@@ -235,7 +243,7 @@ export default {
 }
 
 .box-card {
-  height: 800px;
+  height: 600px;
 }
 
 /*ui样式*/
