@@ -31,9 +31,11 @@
             <a>{{ this.customer.userName }}</a>
           </li></router-link
         >
-        <router-link to="/"
+        <router-link to="/login"
           ><li>
-            <a>Logout</a>
+            <a><button style="   background-color:transparent;
+            border-style:none;
+" @click="loginout">Logout</button></a>
           </li></router-link
         >
       </ul>
@@ -54,7 +56,16 @@ export default {
 
   mounted() {},
 
-  methods: {},
+  methods: {
+     loginout() {
+      //清空sessionStorage
+      window.sessionStorage.clear();
+      // this.$router.push("/login");
+    },
+    handleSelect(key, keyPath) {
+      console.log(key, keyPath);
+    },
+  },
 };
 </script>
 
