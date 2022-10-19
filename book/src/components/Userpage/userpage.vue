@@ -1,6 +1,5 @@
 <template>
   <div class="userPage">
-    <TheNav></TheNav>
     <div class="PersonTop">
       <div class="PersonTop_img">
         <img src="http://localhost:9090/static/headImg/1.jpg" />

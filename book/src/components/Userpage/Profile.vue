@@ -20,32 +20,35 @@
               <i class="el-icon-user"></i>
               username
             </template>
-            <el-input
+            <input
               :placeholder="this.username"
               v-model="input"
               readonly=""
-            ></el-input>
+              class="readinput"
+            />
           </el-descriptions-item>
           <el-descriptions-item>
             <template slot="label">
               <i class="el-icon-s-custom"></i>
               city
             </template>
-            <el-input
+            <input
               :placeholder="this.city"
               v-model="input"
               readonly=""
-            ></el-input>
+              class="readinput"
+            />
           </el-descriptions-item>
           <el-descriptions-item>
             <template slot="label">
               <i class="el-icon-odometer">address</i>
             </template>
-            <el-input
+            <input
               :placeholder="this.address"
               v-model="input"
               readonly=""
-            ></el-input>
+              class="readinput"
+            />
           </el-descriptions-item>
           <el-descriptions-item>
             <template slot="label"> postcode </template>
@@ -56,44 +59,48 @@
               <i class="el-icon-message"></i>
               Email
             </template>
-            <el-input
+            <input
               :placeholder="this.email"
               v-model="input"
               readonly=""
-            ></el-input>
+              class="readinput"
+            />
           </el-descriptions-item>
           <el-descriptions-item>
             <template slot="label">
               <i class="el-icon-mobile-phone"></i>
               Tel
             </template>
-            <el-input
+            <input
               :placeholder="this.mobilePhoneNumber"
               v-model="input"
               readonly=""
-            ></el-input>
+              class="readinput"
+            />
           </el-descriptions-item>
           <el-descriptions-item>
             <template slot="label">
               <i class="el-icon-location-outline"></i>
               cartype
             </template>
-            <el-input
+            <input
               :placeholder="this.cartype"
               v-model="input"
               readonly=""
-            ></el-input>
+              class="readinput"
+            />
           </el-descriptions-item>
           <el-descriptions-item>
             <template slot="label">
               <i class="el-icon-office-building"></i>
               card Number
             </template>
-            <el-input
+            <input
               :placeholder="this.cardNum"
               v-model="input"
               readonly=""
-            ></el-input>
+              class="readinput"
+            />
           </el-descriptions-item>
 
           <el-descriptions-item>
@@ -101,11 +108,12 @@
               <i class="el-icon-basketball"></i>
               money
             </template>
-            <el-input
+            <input
               :placeholder="this.money"
               v-model="input"
               readonly=""
-            ></el-input>
+              class="readinput"
+            />
           </el-descriptions-item>
         </el-descriptions>
       </el-card>
@@ -115,11 +123,17 @@
 
 <script>
 export default {
-  name: "Info",
   methods: {
-    editProfile(){
-      this.$refs.input.readOnly = "false";
-    }
+    editProfile() {
+      let a = document.getElementsByClassName("readinput");
+      console.log(a);
+      for (var i = 0; i < a.length; i++) {
+        a[i].setAttribute("readOnly", false);
+        a[i].readOnly = false;
+        console.log(a[i].readOnly);
+        console.log(a[i]);
+      }
+    },
   },
   data() {
     return {
@@ -135,7 +149,7 @@ export default {
       cardNum: String,
       money: String,
       design: String,
-       input: '',
+      input: "",
     };
   },
 };
