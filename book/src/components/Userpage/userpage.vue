@@ -15,11 +15,11 @@
             <span> qianming {{ design }}</span>
           </div>
         </div>
-        <!-- <div class="userEdit">
+        <div class="userEdit">
           <el-button class="el-icon-edit" type="primary" size="medium" plain 
             >编辑</el-button
           >
-        </div> -->
+        </div>
       </div>
     </div>
     <div class="person_body">
