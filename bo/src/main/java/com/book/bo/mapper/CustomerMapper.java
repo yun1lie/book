@@ -35,4 +35,7 @@ public interface CustomerMapper {
 
     @Select("SELECT * FROM `book`.`tb_customer` WHERE  `username` = #{userName}")
     List<Customer> selectCustomerByName(Customer customer);
+
+    @Update("UPDATE `book`.`tb_customer` SET `amount` = `amount` + #{amount} WHERE `userid` = #{userId}")
+    int customerRecharge(Customer customer);
 }

@@ -65,4 +65,10 @@ public class CustomerController {
         }
         return null;
     }
+
+    //用户充值
+    @PostMapping("/recharge")
+    int customerRecharge(@RequestBody Customer customer) {
+        return customerMapper.customerRecharge(customer);
+    }
 }
