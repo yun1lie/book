@@ -7,19 +7,11 @@
       <div class="PersonTop_text">
         <div class="user_text">
           <div class="user_name">
-            <span>nicheng {{ nickname }} </span>
-            <img src="@/assets/pic/level20.png" alt="" />
+            <span>{{ customer.userName }} </span>
+            <img :src="customer.grade" alt="" />
           </div>
-          <div class="userID">userid:{{}}</div>
-          <div class="user_qianming">
-            <span> qianming {{ design }}</span>
-          </div>
+          <div class="userID">userid:{{ customer.userId }}</div>
         </div>
-        <!-- <div class="userEdit">
-          <el-button class="el-icon-edit" type="primary" size="medium" plain 
-            >编辑</el-button
-          >
-        </div> -->
       </div>
     </div>
     <div class="person_body">
@@ -27,7 +19,7 @@
         <el-card class="box-card" :body-style="{ padding: '0px' }">
           <div slot="header" class="clearfix">
             <span class="person_body_list" style="border-bottom: none"
-              >个人中心</span
+              >Personal Center</span
             >
           </div>
           <el-menu
@@ -67,8 +59,8 @@
             <el-menu-item>
               <i class="el-icon-circle-plus-outline"></i>
               <span slot="title"
-                ><router-link class="span1" to="/"
-                  > Back to Home</router-link
+                ><router-link class="span1" to="/">
+                  Back to Home</router-link
                 ></span
               >
             </el-menu-item>
@@ -83,22 +75,39 @@
 </template>
 
 <script>
+import axios from "axios";
 export default {
+  created() {
+    this.customer = JSON.parse(sessionStorage.getItem("customer"));
+    axios({
+      url: "/api/selectCustomer",
+      method: "post",
+      data: this.customer,
+    }).then((data) => {
+      console.log(this.customer);
+      this.customer = data.data[0];
+      console.log(this.customer);
+    });
+  },
+
   data() {
     return {
-      avatar: "",
-      nickname: "",
-      v: 1,
-      design: "",
-      followCounts: "",
-      fanCounts: "",
-      goodCounts: "",
-      isfollow: true,
-      followData: {
-        fanId: "",
-        followId: "",
+      customer: {
+        userId: "",
+        userName: "",
+        headImage: "",
+        userPwd: "",
+        city: null,
+        address: null,
+        postCode: null,
+        cardNum: null,
+        cardType: null,
+        grade: null,
+        amount: null,
+        tel: null,
+        email: null,
+        freeze: null,
       },
-      isfollowid: [],
     };
   },
 };
@@ -194,10 +203,6 @@ export default {
 .user-v-font {
   font-size: 15px;
   color: #00c3ff;
-}
-.user_qianming {
-  font-size: 14px;
-  color: #999;
 }
 
 .span1 {

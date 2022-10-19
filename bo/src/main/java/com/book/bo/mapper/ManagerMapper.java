@@ -21,6 +21,6 @@ public interface ManagerMapper {
     List<Manager> findAllManager();
 
     @Select("SELECT * FROM `book`.`tb_manager`  WHERE `managerid` = #{managerId}")
-    List<Manager> findManager();
+    List<Manager> findManager(Manager manager);
 
 }
