@@ -1,5 +1,6 @@
 package com.book.bo.controller;
 
+import com.book.bo.entity.Cart;
 import com.book.bo.entity.Customer;
 import com.book.bo.mapper.CustomerMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -71,4 +72,11 @@ public class CustomerController {
     int customerRecharge(@RequestBody Customer customer) {
         return customerMapper.customerRecharge(customer);
     }
+
+    //查询用户购物车
+    @PostMapping("/getCart")
+    List<Cart> getCart(@RequestBody Customer customer){
+        return customerMapper.getCart(customer);
+    }
+
 }

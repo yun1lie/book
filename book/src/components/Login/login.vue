@@ -93,7 +93,6 @@ export default {
           method: "post",
           data: this.signUp,
         }).then((data) => {
-          console.log(data.data);
           if (data.data == 1) {
             alert("sign up sucessful!");
           } else if (data.data == 0) {

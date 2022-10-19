@@ -1,5 +1,6 @@
 package com.book.bo.mapper;
 
+import com.book.bo.entity.Cart;
 import com.book.bo.entity.Customer;
 import org.apache.ibatis.annotations.*;
 
@@ -38,4 +39,8 @@ public interface CustomerMapper {
 
     @Update("UPDATE `book`.`tb_customer` SET `amount` = `amount` + #{amount} WHERE `userid` = #{userId}")
     int customerRecharge(Customer customer);
+
+    @Select("SELECT * FROM `book`.`view_cart` WHERE `userid` = #{userId}")
+    List<Cart> getCart(Customer customer);
+
 }

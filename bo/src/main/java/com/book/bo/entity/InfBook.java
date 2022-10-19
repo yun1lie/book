@@ -14,7 +14,7 @@ public class InfBook {
     private String author;
     private String bookConcern;
     private String publishTime;
-    private String bookPrice;
+    private Double bookPrice;
     private String infBook;
     private String infAuthor;
     private String bookImage;

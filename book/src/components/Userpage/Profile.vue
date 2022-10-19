@@ -126,12 +126,9 @@ export default {
   methods: {
     editProfile() {
       let a = document.getElementsByClassName("readinput");
-      console.log(a);
       for (var i = 0; i < a.length; i++) {
         a[i].setAttribute("readOnly", false);
         a[i].readOnly = false;
-        console.log(a[i].readOnly);
-        console.log(a[i]);
       }
     },
   },
