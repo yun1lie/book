@@ -104,7 +104,7 @@
 </template>
 
 <script>
-import { userInfo } from "@/api/user.js";
+// import { userInfo } from "@/api/user.js";
 export default {
   name: "Info",
   data() {

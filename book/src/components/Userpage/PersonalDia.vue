@@ -73,7 +73,7 @@
 </template>
 
 <script>
-import { userInfo, updateUser } from "@/api/user.js";
+// import { userInfo, updateUser } from "@/api/user.js";
 
 export default {
   name: "PersonalDia",
@@ -112,16 +112,16 @@ export default {
     open() {
       this.dialogVisible = true;
     },
-    load() {
-      userInfo(this.$store.state.id)
-        .then((res) => {
-          console.log(res);
-          Object.assign(this.form, res.data);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    },
+    // load() {
+    //   // userInfo(this.$store.state.id)
+    //   //   .then((res) => {
+    //   //     console.log(res);
+    //   //     Object.assign(this.form, res.data);
+    //   //   })
+    //   //   .catch((err) => {
+    //   //     console.log(err);
+    //   //   });
+    // },
     submit() {
       updateUser(this.form)
         .then((res) => {

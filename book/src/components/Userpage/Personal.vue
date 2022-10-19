@@ -127,15 +127,15 @@
 </template>
 
 <script>
-import { userInfo } from "@/api/user";
-import {
-  myFollow,
-  addFollow,
-  deleteFollow,
-  followAndFanCount,
-} from "@/api/follow.js";
-import { mygoodCount } from "@/api/good";
-import PersonalDia from "./PersonalDia.vue";
+// import { userInfo } from "@/api/user";
+// import {
+//   myFollow,
+//   addFollow,
+//   deleteFollow,
+//   followAndFanCount,
+// } from "@/api/follow.js";
+// import { mygoodCount } from "@/api/good";
+// import PersonalDia from "./PersonalDia.vue";
 
 export default {
   components: { PersonalDia },
@@ -171,46 +171,46 @@ export default {
     },
   },
   methods: {
-    load() {
-      userInfo(this.$route.params.id)
-        .then((res) => {
-          console.log(res);
-          this.avatar = res.data.avatar;
-          this.nickname = res.data.nickname;
-          this.v = res.data.v;
-          this.design = res.data.design;
-        })
-        .catch((err) => {
-          console.log(err);
-        });
+    // load() {
+    //   userInfo(this.$route.params.id)
+    //     .then((res) => {
+    //       console.log(res);
+    //       this.avatar = res.data.avatar;
+    //       this.nickname = res.data.nickname;
+    //       this.v = res.data.v;
+    //       this.design = res.data.design;
+    //     })
+    //     .catch((err) => {
+    //       console.log(err);
+    //     });
 
-      myFollow(this.$store.state.id)
-        .then((res) => {
-          res.data.forEach((res) => {
-            this.isfollowid.push(res.id);
-          });
-        })
-        .catch((err) => {
-          console.log(err);
-        });
+    //   myFollow(this.$store.state.id)
+    //     .then((res) => {
+    //       res.data.forEach((res) => {
+    //         this.isfollowid.push(res.id);
+    //       });
+    //     })
+    //     .catch((err) => {
+    //       console.log(err);
+    //     });
 
-      followAndFanCount(this.$route.params.id)
-        .then((res) => {
-          this.followCounts = res.data.followCounts;
-          this.fanCounts = res.data.fanCounts;
-        })
-        .catch((err) => {
-          console.log(err);
-        });
+    //   followAndFanCount(this.$route.params.id)
+    //     .then((res) => {
+    //       this.followCounts = res.data.followCounts;
+    //       this.fanCounts = res.data.fanCounts;
+    //     })
+    //     .catch((err) => {
+    //       console.log(err);
+    //     });
 
-      mygoodCount(this.$route.params.id)
-        .then((res) => {
-          this.goodCounts = res.data.goodCounts;
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    },
+    //   mygoodCount(this.$route.params.id)
+    //     .then((res) => {
+    //       this.goodCounts = res.data.goodCounts;
+    //     })
+    //     .catch((err) => {
+    //       console.log(err);
+    //     });
+    // },
     myfan() {
       this.$router.push({
         path: `/newsuser/personal/myfan/${this.$route.params.id}`,
@@ -410,9 +410,6 @@ export default {
     rgba(82, 196, 204, 0.281) 100%
   );
   -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;
-  -webkit-background-size: 200% 100%;
-  -webkit-animation: masked-animation 4s linear infinite;
 }
 
 .el-menu-item {
