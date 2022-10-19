@@ -1,5 +1,6 @@
 <template>
   <div class="userPage">
+    <TheNav></TheNav>
     <div class="PersonTop">
       <div class="PersonTop_img">
         <img src="http://localhost:9090/static/headImg/1.jpg" />
@@ -64,6 +65,12 @@
               <i class="el-icon-circle-plus-outline"></i>
               <span slot="title">Account recharge</span>
             </el-menu-item>
+            <el-menu-item>
+              <i class="el-icon-circle-plus-outline"></i>
+              <span slot="title"
+                ><router-link to="/">Back to Home</router-link></span
+              >
+            </el-menu-item>
           </el-menu>
         </el-card>
       </div>
@@ -113,7 +120,7 @@ export default {
   top: 0;
 }
 .PersonTop {
-  width: 1000px;
+  width: 80%;
   height: 140px;
   padding-top: 20px;
   background-color: white;
@@ -145,12 +152,13 @@ export default {
 
 .PersonTop_text {
   height: 120px;
-  width: 880px;
+  width: 80%;
+  margin: auto;
   display: flex;
 }
 
 .user_text {
-  width: 60%;
+  width: 100%;
   height: 100%;
   line-height: 30px;
 }
@@ -198,7 +206,7 @@ export default {
 
 /*下面部分样式*/
 .person_body {
-  width: 1000px;
+  width: 80%;
   margin-top: 210px;
   display: flex;
   position: absolute;
@@ -208,7 +216,7 @@ export default {
 }
 
 .person_body_left {
-  width: 27%;
+  width: 20%;
   height: 600px;
   border-radius: 5px;
   margin-right: 3%;
@@ -220,14 +228,14 @@ export default {
 }
 
 .person_body_right {
-  width: 70%;
+  width: 80%;
   /* height: 500px; */
   border-radius: 5px;
   background-color: white;
 }
 
 .box-card {
-  height: 500px;
+  height: 800px;
 }
 
 /*ui样式*/

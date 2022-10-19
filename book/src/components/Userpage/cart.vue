@@ -1,24 +1,10 @@
 <template>
   <div>
-    <div class="cart-header">
-      <div class="cart-header-contain">
-        <div class="cart-title">购物车</div>
-      </div>
-    </div>
-    <!-- 网页端样式  -->
     <div v-if="!isMobile" class="cart-web">
-      <!-- 导航栏 
-		左边logo 右边搜索 
-		内容 单栏购物车  -->
       <div class="cart-contain">
         <div class="cart-table-container">
           <div class="cart-filter-bar">
             <span class="switch-cart">购物车（全部{{ cartTotalCount }}）</span>
-            <!-- <div class="cart-sum" style="display: none">
-              <span class="pay-text">已选商品</span>
-              <span class="total-symbol">{{ cartTotalPrice }}</span>
-              <div class="pay-btn inactive-btn">结算</div>
-            </div> -->
           </div>
           <div class="cart-list-content">
             <el-table
@@ -497,12 +483,10 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 24px;
 }
 
 .cart-table-container {
-  width: 80%;
-  border-radius: 25px;
+  width: 100%;
   padding: 10px 30px;
   background: #fff;
   min-height: calc(100vh - 130px);
