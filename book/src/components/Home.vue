@@ -75,47 +75,46 @@
       <!-- Home cards 2 -->
       <section class="home-cards">
         <div>
-          <img src="./pic/1.jpg" alt="" />
+          <img src="./pic/2.jpg" alt="" />
           <h3>The Work of UNICEF</h3>
           <p>
             Find out how UNICEF drives change for children and young people
             every day, across the globe.
           </p>
           <br />
-          <a href="https://www.unicef.org/what-we-do"
+          <a href="#"
             >Click to view<i class="fas fa-chevron-right"></i
           ></a>
         </div>
         <div>
-          <img src="./pic/1.jpg" alt="" />
+          <img src="./pic/3.jpg" alt="" />
           <h3>Research and reports</h3>
           <p>
             UNICEF’s work is grounded in empirical data, rigorous research and
             thoughtful analysis.
           </p>
           <br />
-          <a href="https://www.unicef.org/research-and-reports"
-            >Click to view<i class="fas fa-chevron-right"></i
+          <a href="#">Click to view<i class="fas fa-chevron-right"></i
           ></a>
         </div>
         <div>
-          <img src="./pic/1.jpg" alt="" />
+          <img src="./pic/4.jpg" alt="" />
           <h3>Stories and features</h3>
           <p>Beyond the headlines, every child has a story.</p>
           <br /><br />
-          <a href="https://www.unicef.org/stories"
+          <a href="#"
             >Click to view <i class="fas fa-chevron-right"></i
           ></a>
         </div>
         <div>
-          <img src="./pic/1.jpg" alt="" />
+          <img src="./pic/5.jpg" alt="" />
           <h3>Take action</h3>
           <p>
             Join us to make a direct impact in the lives of the world’s most
             vulnerable children.
           </p>
           <br />
-          <a href="https://www.unicef.org/take-action"
+          <a href="#"
             >Click to view <i class="fas fa-chevron-right"></i
           ></a>
         </div>

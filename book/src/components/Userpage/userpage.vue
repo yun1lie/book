@@ -65,7 +65,7 @@
               <span slot="title">Account recharge</span>
             </el-menu-item>
             <el-menu-item>
-              <i class="el-icon-circle-plus-outline"></i>
+              <i class="el-icon-back"></i>
               <span slot="title"
                 ><router-link class="span1" to="/"
                   > Back to Home</router-link
