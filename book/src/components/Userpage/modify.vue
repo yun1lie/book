@@ -12,8 +12,13 @@
         <p><span class="userheadimgtext">修改头像</span></p>
       </div>
       <div>
-       <el-input style="width:60%;margin-left:20%;margin-bottom: 2%;" :placeholder="this.username" v-model="input" clearable>
-        <template slot="prepend">Username:</template>
+        <el-input
+          style="width: 60%; margin-left: 20%; margin-bottom: 2%"
+          :placeholder="this.username"
+          v-model="edit.username"
+          clearable
+        >
+          <template slot="prepend">Username:</template>
         </el-input>
       </div>
       <div>
@@ -24,45 +29,45 @@
                 <i class="el-icon-s-custom"></i>
                 city
               </template>
-              {{ city }}
+              <el-input  :placeholder="this.city" v-model="edit.city" />
             </el-descriptions-item>
             <el-descriptions-item>
               <template slot="label">
                 <i class="el-icon-odometer">address</i>
               </template>
-              {{ address }}
+              <el-input  :placeholder="this.address" v-model="edit.address" />
             </el-descriptions-item>
             <el-descriptions-item>
               <template slot="label"> postcode </template>
-              <el-tag size="small">{{ postcode }}</el-tag>
+               <el-input  :placeholder="this.postcode" v-model="edit.postcode" />
             </el-descriptions-item>
             <el-descriptions-item>
               <template slot="label">
                 <i class="el-icon-message"></i>
                 Email
               </template>
-              {{ email }}
+              <el-input  :placeholder="this.email" v-model="edit.email" />
             </el-descriptions-item>
             <el-descriptions-item>
               <template slot="label">
                 <i class="el-icon-mobile-phone"></i>
                 Tel
               </template>
-              {{ mobilePhoneNumber }}
+              <el-input  :placeholder="this.mobilePhoneNumber" v-model="edit.mobilePhoneNumber" />
             </el-descriptions-item>
             <el-descriptions-item>
               <template slot="label">
                 <i class="el-icon-location-outline"></i>
                 cartype
               </template>
-              {{ cartype }}
+              <el-input  :placeholder="this.cartype" v-model="edit.cartype" />
             </el-descriptions-item>
             <el-descriptions-item>
               <template slot="label">
                 <i class="el-icon-office-building"></i>
                 card Number
               </template>
-              {{ cardNum }}
+              <el-input  :placeholder="this.card" v-model="edit.card" />
             </el-descriptions-item>
 
             <el-descriptions-item>
@@ -74,6 +79,17 @@
             </el-descriptions-item>
           </el-descriptions>
         </el-card>
+        <div class="butt">
+          <div class="butt1">
+            <el-button
+              type="primary"
+              icon="el-icon-refresh"
+              class="submit"
+              @click="Save"
+              >Save</el-button
+            >
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -95,6 +111,18 @@ export default {
   },
   data() {
     return {
+      edit: {
+        username: "",
+        address:"",
+        email: "",
+        mobilePhoneNumber: "",
+        cartype: "",
+        createDate: "",
+        city: "",
+        postcode: "",
+        cardNum: "",
+        money: "",
+      },
       avatar: String,
       username: String,
       address: Number,
@@ -146,5 +174,15 @@ export default {
   cursor: pointer;
   color: #00c3ff;
   font-size: 12px;
+}
+.butt {
+  margin-top: 3%;
+  margin-bottom: 3%;
+  width: 100%;
+}
+
+.butt1 {
+  margin: 0 auto;
+  width: 50px;
 }
 </style>

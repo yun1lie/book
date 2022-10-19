@@ -13,7 +13,7 @@
           <div class="userID">userid:{{ customer.userId }}</div>
         </div>
         <div class="userEdit">
-          <el-button class="el-icon-edit" type="primary" size="medium" plain 
+          <el-button @click="edit" class="el-icon-edit" type="primary" size="medium" plain 
             >编辑</el-button
           >
         </div>
@@ -93,7 +93,14 @@ export default {
 
     });
   },
-
+  methods: {
+     edit() {
+      //清空sessionStorage
+      this.$router.push("/modify");
+    },
+    handleSelect(key, keyPath) {
+    },
+  },
   data() {
     return {
       customer: {
