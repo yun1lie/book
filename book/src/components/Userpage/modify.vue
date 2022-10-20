@@ -55,14 +55,10 @@
                 <i class="el-icon-mobile-phone"></i>
                 Tel
               </template>
-<<<<<<< HEAD
               <input
                 placeholder="mobilePhoneNumber"
                 v-model="customer.tel"
               />
-=======
-              <input placeholder="mobilePhoneNumber" v-model="customer.tel" />
->>>>>>> main
             </el-descriptions-item>
             <el-descriptions-item>
               <template slot="label">
