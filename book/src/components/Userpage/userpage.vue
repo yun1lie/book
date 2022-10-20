@@ -2,7 +2,7 @@
   <div class="userPage">
     <div class="PersonTop">
       <div class="PersonTop_img">
-        <img src="http://localhost:9090/static/headImg/1.jpg" />
+        <img  :src="this.customer.headImage" />
       </div>
       <div class="PersonTop_text">
         <div class="user_text">
@@ -14,7 +14,7 @@
         </div>
         <div class="userEdit">
           <el-button @click="edit" class="el-icon-edit" type="primary" size="medium" plain 
-            >编辑</el-button
+            >edit</el-button
           >
         </div>
       </div>
