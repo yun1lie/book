@@ -15,7 +15,7 @@
         <input
           style="width: 60%; margin-left: 20%; margin-bottom: 2%"
           placeholder="username"
-          v-model="this.customer.userName"
+          v-model="customer.userName"
         />
       </div>
       <div>
@@ -31,48 +31,52 @@
                 <i class="el-icon-s-custom"></i>
                 city
               </template>
-              <input placeholder="city" v-model="this.customer.city" />
+              <input placeholder="city" v-model="customer.city" />
             </el-descriptions-item>
             <el-descriptions-item>
               <template slot="label">
                 <i class="el-icon-odometer">address</i>
               </template>
-              <input placeholder="address" v-model="this.customer.address" />
+              <input placeholder="address" v-model="customer.address" />
             </el-descriptions-item>
             <el-descriptions-item>
               <template slot="label"> postcode </template>
-              <input placeholder="postcode" v-model="this.customer.postCode" />
+              <input placeholder="postcode" v-model="customer.postCode" />
             </el-descriptions-item>
             <el-descriptions-item>
               <template slot="label">
                 <i class="el-icon-message"></i>
                 Email
               </template>
-              <input placeholder="email" v-model="this.customer.email" />
+              <input placeholder="email" v-model="customer.email" />
             </el-descriptions-item>
             <el-descriptions-item>
               <template slot="label">
                 <i class="el-icon-mobile-phone"></i>
                 Tel
               </template>
+<<<<<<< HEAD
               <input
                 placeholder="mobilePhoneNumber"
-                v-model="this.customer.tel"
+                v-model="customer.tel"
               />
+=======
+              <input placeholder="mobilePhoneNumber" v-model="customer.tel" />
+>>>>>>> main
             </el-descriptions-item>
             <el-descriptions-item>
               <template slot="label">
                 <i class="el-icon-location-outline"></i>
                 cardtype
               </template>
-              <input placeholder="cardtype" v-model="this.customer.cardType" />
+              <input placeholder="cardtype" v-model="customer.cardType" />
             </el-descriptions-item>
             <el-descriptions-item>
               <template slot="label">
                 <i class="el-icon-office-building"></i>
                 card Number
               </template>
-              <input placeholder="card" v-model="this.customer.cardNum" />
+              <input placeholder="card" v-model="customer.cardNum" />
             </el-descriptions-item>
 
             <el-descriptions-item>
@@ -80,7 +84,7 @@
                 <i class="el-icon-basketball"></i>
                 money
               </template>
-              {{ this.customer.amount }}
+              {{customer.amount }}
             </el-descriptions-item>
           </el-descriptions>
         </el-card>
@@ -101,6 +105,7 @@
 </template>
 
 <script>
+import axios from "axios";
 export default {
   created() {
     this.customer = JSON.parse(sessionStorage.customer);
@@ -108,11 +113,38 @@ export default {
     console.log("aaaaaaaaaaaaaa");
   },
   methods: {
-    Save() {},
+    Save() {
+      if(
+        this.customer.userName == "" ||
+        this.customer.city == ""||
+        this.customer.address == "" ||
+        this.customer.postcode == "" ||
+        this.customer.cardNum == "" ||
+        this.customer.cardType == ""||
+        this.customer.email== ""||
+        this.customer.tel == "" 
+      ){
+        alert("需要填写完全");
+      } 
+      else{
+        axios({
+          url: "/api/updateCustomer",
+          method: "post",
+          data: this.customer,
+        }).then((data) => {
+          if (data.data == 1) {
+            alert("edit sucessful!");
+          } else if (data.data == 0) {
+            alert("some where wrong");
+          } else {
+            alert("unknown error");
+          }
+        });
+      }
+    },
   },
   data() {
     return {
-      input: "",
       customer: {
         userId: "",
         userName: "",

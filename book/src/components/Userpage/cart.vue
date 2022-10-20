@@ -255,6 +255,10 @@ export default {
   },
   components: {},
   methods: {
+    min1() {
+      alert("aaaaaaa");
+      console.log("ccccccccccccccccc");
+    },
     buy() {
       if (this.customer.amount < this.cartTotalPrice) {
         alert("Insufficient balance, please recharge");
