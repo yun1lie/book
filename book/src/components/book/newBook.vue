@@ -38,6 +38,7 @@ export default {
 <style scpoed>
 .book-cards {
   background-color: rgb(246, 247, 241);
+  height: auto;
   display: flex;
   width: 90%;
   max-width: 1100px;
@@ -50,7 +51,7 @@ export default {
 }
 .book-cards .book-cont {
   width: 100%;
-  height: 500px;
+  height: auto;
   display: flex;
   flex-wrap: wrap;
 }

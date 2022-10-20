@@ -31,48 +31,45 @@
                 <i class="el-icon-s-custom"></i>
                 city
               </template>
-              <input placeholder="city" v-model="this.customer.city" />
+              <input placeholder="city" v-model="customer.city" />
             </el-descriptions-item>
             <el-descriptions-item>
               <template slot="label">
                 <i class="el-icon-odometer">address</i>
               </template>
-              <input placeholder="address" v-model="this.customer.address" />
+              <input placeholder="address" v-model="customer.address" />
             </el-descriptions-item>
             <el-descriptions-item>
               <template slot="label"> postcode </template>
-              <input placeholder="postcode" v-model="this.customer.postCode" />
+              <input placeholder="postcode" v-model="customer.postCode" />
             </el-descriptions-item>
             <el-descriptions-item>
               <template slot="label">
                 <i class="el-icon-message"></i>
                 Email
               </template>
-              <input placeholder="email" v-model="this.customer.email" />
+              <input placeholder="email" v-model="customer.email" />
             </el-descriptions-item>
             <el-descriptions-item>
               <template slot="label">
                 <i class="el-icon-mobile-phone"></i>
                 Tel
               </template>
-              <input
-                placeholder="mobilePhoneNumber"
-                v-model="this.customer.tel"
-              />
+              <input placeholder="mobilePhoneNumber" v-model="customer.tel" />
             </el-descriptions-item>
             <el-descriptions-item>
               <template slot="label">
                 <i class="el-icon-location-outline"></i>
                 cardtype
               </template>
-              <input placeholder="cardtype" v-model="this.customer.cardType" />
+              <input placeholder="cardtype" v-model="customer.cardType" />
             </el-descriptions-item>
             <el-descriptions-item>
               <template slot="label">
                 <i class="el-icon-office-building"></i>
                 card Number
               </template>
-              <input placeholder="card" v-model="this.customer.cardNum" />
+              <input placeholder="card" v-model="customer.cardNum" />
             </el-descriptions-item>
 
             <el-descriptions-item>
@@ -112,7 +109,6 @@ export default {
   },
   data() {
     return {
-      input: "",
       customer: {
         userId: "",
         userName: "",

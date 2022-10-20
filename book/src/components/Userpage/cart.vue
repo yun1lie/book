@@ -70,7 +70,6 @@
                     size="medium"
                     type="danger"
                     v-on:click="delGood(scope.row.id)"
-                    @click="min1"
                     >delete</el-button
                   >
                 </template>

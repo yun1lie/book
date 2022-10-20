@@ -16,6 +16,7 @@
         <router-link to="/newBook" class="btn">
           Shop Now <i class="fas fa-chevron-right"></i
         ></router-link>
+                <router-link to="/newBook"></router-link>
       </header>
 
       <!-- Home cards 1 -->
@@ -25,7 +26,9 @@
           <h3>New Book</h3>
           <p>The new book is on the market and is in hot sale.</p>
           <br />
-          <a href="#">Learn More <i class="fas fa-chevron-right"></i></a>
+          <router-link to="/newBook"
+            >Learn More <i class="fas fa-chevron-right"></i
+          ></router-link>
         </div>
         <div>
           <img src="@/assets/pic/sellBook.jpeg" alt="" />

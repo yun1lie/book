@@ -14,6 +14,10 @@ const router = new VueRouter({
       component: () => import("@/components/book/newBook.vue"),
     },
     {
+      path: "/details",
+      component: () => import("@/components/book/details.vue"),
+    },
+    {
       path: "/login",
       component: () => import("@/components/Login/login.vue"),
     },
