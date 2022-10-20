@@ -4,12 +4,11 @@
       <div class="userillustrate">Edit your profile</div>
       <div class="userheadimg">
         <div class="userimg">
-          <img
-            src="https://img-static.mihoyo.com/avatar/avatar1.png"
-            class="user-img"
-          />
+          <img :src="this.customer.headImage" class="user-img" />
         </div>
-        <p><span class="userheadimgtext">修改头像</span></p>
+        <p @click="avatar">
+          <span class="userheadimgtext">Modify avatar</span>
+        </p>
       </div>
       <div>
         <input
@@ -55,14 +54,7 @@
                 <i class="el-icon-mobile-phone"></i>
                 Tel
               </template>
-<<<<<<< HEAD
-              <input
-                placeholder="mobilePhoneNumber"
-                v-model="customer.tel"
-              />
-=======
               <input placeholder="mobilePhoneNumber" v-model="customer.tel" />
->>>>>>> main
             </el-descriptions-item>
             <el-descriptions-item>
               <template slot="label">
@@ -84,7 +76,7 @@
                 <i class="el-icon-basketball"></i>
                 money
               </template>
-              {{customer.amount }}
+              {{ customer.amount }}
             </el-descriptions-item>
           </el-descriptions>
         </el-card>
@@ -109,24 +101,40 @@ import axios from "axios";
 export default {
   created() {
     this.customer = JSON.parse(sessionStorage.customer);
-    console.log(this.customer);
-    console.log("aaaaaaaaaaaaaa");
   },
   methods: {
+    avatar() {
+      var a = (Math.round(Math.random() * 10) % 5) + 1;
+      var cu = this.customer;
+      cu.headImage = "http://localhost:9090/static/headImg/" + a + ".png";
+      console.log(cu);
+      axios({
+        url: "/api/updateCustomer",
+        method: "post",
+        data: cu,
+      }).then((data) => {
+        if (data.data == 1) {
+          alert("edit sucessful!");
+        } else if (data.data == 0) {
+          alert("some where wrong");
+        } else {
+          alert("unknown error");
+        }
+      });
+    },
     Save() {
-      if(
+      if (
         this.customer.userName == "" ||
-        this.customer.city == ""||
+        this.customer.city == "" ||
         this.customer.address == "" ||
         this.customer.postcode == "" ||
         this.customer.cardNum == "" ||
-        this.customer.cardType == ""||
-        this.customer.email== ""||
-        this.customer.tel == "" 
-      ){
-        alert("需要填写完全");
-      } 
-      else{
+        this.customer.cardType == "" ||
+        this.customer.email == "" ||
+        this.customer.tel == ""
+      ) {
+        alert("Need to fill in completely");
+      } else {
         axios({
           url: "/api/updateCustomer",
           method: "post",
