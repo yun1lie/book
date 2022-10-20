@@ -43,4 +43,6 @@ public interface CustomerMapper {
     @Select("SELECT * FROM `book`.`view_cart` WHERE `userid` = #{userId}")
     List<Cart> getCart(Customer customer);
 
+    @Delete("DELETE FROM `book`.`tb_cart` WHERE `userid` = #{userId}")
+    int emptyCart(Customer customer);
 }
