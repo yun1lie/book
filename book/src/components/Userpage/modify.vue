@@ -12,14 +12,11 @@
         <p><span class="userheadimgtext">修改头像</span></p>
       </div>
       <div>
-        <el-input
+        <input
           style="width: 60%; margin-left: 20%; margin-bottom: 2%"
           placeholder="username"
           v-model="this.customer.userName"
-          clearable
-        >
-          <template slot="prepend">Username:</template>
-        </el-input>
+        />
       </div>
       <div>
         <el-card>
@@ -34,31 +31,31 @@
                 <i class="el-icon-s-custom"></i>
                 city
               </template>
-              <el-input placeholder="city" v-model="this.customer.city" />
+              <input placeholder="city" v-model="this.customer.city" />
             </el-descriptions-item>
             <el-descriptions-item>
               <template slot="label">
                 <i class="el-icon-odometer">address</i>
               </template>
-              <el-input placeholder="address" v-model="this.customer.address" />
+              <input placeholder="address" v-model="this.customer.address" />
             </el-descriptions-item>
             <el-descriptions-item>
               <template slot="label"> postcode </template>
-              <el-input placeholder="postcode" v-model="this.customer.postCode" />
+              <input placeholder="postcode" v-model="this.customer.postCode" />
             </el-descriptions-item>
             <el-descriptions-item>
               <template slot="label">
                 <i class="el-icon-message"></i>
                 Email
               </template>
-              <el-input placeholder="email" v-model="this.customer.email" />
+              <input placeholder="email" v-model="this.customer.email" />
             </el-descriptions-item>
             <el-descriptions-item>
               <template slot="label">
                 <i class="el-icon-mobile-phone"></i>
                 Tel
               </template>
-              <el-input
+              <input
                 placeholder="mobilePhoneNumber"
                 v-model="this.customer.tel"
               />
@@ -68,14 +65,14 @@
                 <i class="el-icon-location-outline"></i>
                 cardtype
               </template>
-              <el-input placeholder="cardtype" v-model="this.customer.cardType" />
+              <input placeholder="cardtype" v-model="this.customer.cardType" />
             </el-descriptions-item>
             <el-descriptions-item>
               <template slot="label">
                 <i class="el-icon-office-building"></i>
                 card Number
               </template>
-              <el-input placeholder="card" v-model="this.customer.cardNum" />
+              <input placeholder="card" v-model="this.customer.cardNum" />
             </el-descriptions-item>
 
             <el-descriptions-item>
@@ -83,7 +80,7 @@
                 <i class="el-icon-basketball"></i>
                 money
               </template>
-              {{ money }}
+              {{ this.customer.amount }}
             </el-descriptions-item>
           </el-descriptions>
         </el-card>
@@ -107,46 +104,31 @@
 export default {
   created() {
     this.customer = JSON.parse(sessionStorage.customer);
+    console.log(this.customer);
+    console.log("aaaaaaaaaaaaaa");
   },
   methods: {
-    editProfile() {
-      let a = document.getElementsByClassName("readinput");
-      console.log(a);
-      for (var i = 0; i < a.length; i++) {
-        a[i].setAttribute("readOnly", false);
-        a[i].readOnly = false;
-        console.log(a[i].readOnly);
-        console.log(a[i]);
-      }
-    },
+    Save() {},
   },
   data() {
     return {
-      edit: {
-        username: "",
-        address: "",
-        email: "",
-        mobilePhoneNumber: "",
-        cartype: "",
-        createDate: "",
-        city: "",
-        postcode: "",
-        cardNum: "",
-        money: "",
-      },
-      avatar: String,
-      username: String,
-      address: Number,
-      email: String,
-      mobilePhoneNumber: String,
-      cartype: String,
-      createDate: Number,
-      city: String,
-      postcode: String,
-      cardNum: String,
-      money: String,
-      design: String,
       input: "",
+      customer: {
+        userId: "",
+        userName: "",
+        headImage: "",
+        userPwd: "",
+        city: "",
+        address: "",
+        postCode: "",
+        cardNum: "",
+        cardType: "",
+        grade: "",
+        amount: "",
+        tel: "",
+        email: "",
+        freeze: "",
+      },
     };
   },
 };
