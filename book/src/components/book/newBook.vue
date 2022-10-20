@@ -5,11 +5,27 @@
       <div class="book-header"><h3>&nbsp;&nbsp;&nbsp;&nbsp;New Book</h3></div>
       <div class="book-cont">
         <div class="book-card" v-for="i in this.bookList" :key="i.bookId">
-          <a href="#">
+          <router-link
+            :to="{
+              name: 'details',
+              query: {
+                bookImage: i.bookImage,
+                bookName: i.bookName,
+                author: i.author,
+                bookNum: i.bookNum,
+                bookconcern: i.bookConcern,
+                publishtime: i.publishTime,
+                bookprice: i.bookPrice,
+                infbook: i.infbook,
+                infauthor: i.infauthor
+              },
+            }"
+          >
             <img :src="i.bookImage" alt="" />
             <p>{{ i.bookName }}</p>
-            <p>{{ i.author }}</p></a
-          >
+            <p>{{ i.author }}</p>
+            <div style="display: none">{{i.bookNum}}{{i.bookConcern}}{{i.publishTime}}{{i.bookPrice}}{{i.infbook}}{{i.infauthor}}</div>
+          </router-link>
         </div>
       </div>
     </div>

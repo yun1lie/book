@@ -4,7 +4,7 @@
     <div class="co">
       <h1>book name</h1>
       <div class="coo">
-        <img src="@/assets/logo.png" alt="" />
+        <img :src="this.bookImage" />
         <div class="info">
           <p>author{{}}</p>
           <p>press{{}}</p>
@@ -24,7 +24,21 @@
 import TheNav from "@/components/TheNav/TheNav.vue";
 export default {
   components: { TheNav },
+  created() {
+    this.bookImage = this.$route.query.bookImage;
+    this.bookName = this.$route.query.bookName;
+    this.author = this.$route.query.author;
+    this.bookNum = this.$route.query.bookNum;
+    this.bookConcern = this.$route.query.bookConcern;
+    this.publishTime = this.$route.query.publishTime;
+    this.bookPrice = this.$route.query.bookPrice;
+    this.infbook = this.$route.query.infBook;
+    this.infauthor = this.$route.query.infAuthor
+  }
 };
+
+
+
 </script>
 
 <style scpoed>
