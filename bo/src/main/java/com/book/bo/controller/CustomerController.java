@@ -75,8 +75,15 @@ public class CustomerController {
 
     //查询用户购物车
     @PostMapping("/getCart")
-    List<Cart> getCart(@RequestBody Customer customer){
+    List<Cart> getCart(@RequestBody Customer customer) {
         return customerMapper.getCart(customer);
     }
+
+    //清空购物车
+    @PostMapping("/emptyCart")
+    int emptyCart(@RequestBody Customer customer) {
+        return customerMapper.emptyCart(customer);
+    }
+
 
 }

@@ -2,7 +2,7 @@
   <div class="newBook">
     <TheNav></TheNav>
     <div class="book-cards">
-      <div class="book-header"><h3>New Book</h3></div>
+      <div class="book-header"><h3>&nbsp;&nbsp;&nbsp;&nbsp;New Book</h3></div>
       <div class="book-cont" v-for="i in this.bookList" :key="i.bookId">
         <div class="book-card">
           <a href="#">
@@ -41,7 +41,6 @@ export default {
   display: flex;
   width: 90%;
   max-width: 1100px;
-  height: 700px;
   margin: auto;
   flex-direction: column;
 }
@@ -59,8 +58,13 @@ export default {
 .book-cont .book-card {
   padding: 3.75%;
   width: 12.5%;
+  font-size: 12px;
 }
 .book-cards .book-cont img {
   width: 100%;
+}
+a{
+  color: black;
+  text-decoration: none;
 }
 </style>

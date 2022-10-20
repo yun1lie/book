@@ -98,10 +98,14 @@
               <span class="pay-text">Selected items</span>
               <span class="total-text">total:</span>
               <span class="total-symbol">{{ cartTotalPrice }}</span>
-              <div v-if="selectionData.length > 0" class="pay-btn-active">
-                settlement
+              <div
+                v-if="selectionData.length > 0"
+                class="pay-btn-active"
+                @click="buy"
+              >
+                Buy
               </div>
-              <div v-else class="pay-btn-inactive">settlement</div>
+              <div v-else class="pay-btn-inactive">Buy</div>
             </div>
           </div>
         </div>
@@ -189,9 +193,9 @@
             <span class="total-pay-count">{{ cartTotalPrice }}</span>
           </div>
           <div v-if="selectionData.length > 0" class="settlement-active">
-            settlement
+            Buy
           </div>
-          <div v-else class="settlement-inactive">settlement</div>
+          <div v-else class="settlement-inactive">Buy</div>
         </div>
       </div>
       <!-- 如果购物车没有数据 -->
@@ -225,6 +229,7 @@ export default {
     };
   },
   created() {
+    this.customer = JSON.parse(sessionStorage.getItem("customer"));
     //从后端获取到用户购物车信息
     axios({
       url: "/api/getCart",
@@ -250,6 +255,34 @@ export default {
   },
   components: {},
   methods: {
+    buy() {
+      if (this.customer.amount < this.cartTotalPrice) {
+        alert("Insufficient balance, please recharge");
+      } else {
+        this.customer.amount = this.customer.amount - this.cartTotalPrice;
+        axios({
+          url: "/api/emptyCart",
+          method: "post",
+          data: this.customer,
+        }).then((data) => {
+          console.log("cart", data.data);
+          if (data.data == 1) {
+            axios({
+              url: "/api/updateCustomer",
+              method: "post",
+              data: this.customer,
+            }).then((data) => {
+              console.log("customer", data.data);
+
+              if (data.data == 1) {
+                alert("buy sucessful!");
+                location.reload();
+              }
+            });
+          }
+        });
+      }
+    },
     // 选择当前商品
     checkCurrent(item) {
       let _this = this;
