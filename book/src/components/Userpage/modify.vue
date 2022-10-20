@@ -15,7 +15,7 @@
         <input
           style="width: 60%; margin-left: 20%; margin-bottom: 2%"
           placeholder="username"
-          v-model="this.customer.userName"
+          v-model="customer.userName"
         />
       </div>
       <div>
@@ -55,7 +55,14 @@
                 <i class="el-icon-mobile-phone"></i>
                 Tel
               </template>
+<<<<<<< HEAD
+              <input
+                placeholder="mobilePhoneNumber"
+                v-model="customer.tel"
+              />
+=======
               <input placeholder="mobilePhoneNumber" v-model="customer.tel" />
+>>>>>>> main
             </el-descriptions-item>
             <el-descriptions-item>
               <template slot="label">
@@ -77,7 +84,7 @@
                 <i class="el-icon-basketball"></i>
                 money
               </template>
-              {{ this.customer.amount }}
+              {{customer.amount }}
             </el-descriptions-item>
           </el-descriptions>
         </el-card>
@@ -98,6 +105,7 @@
 </template>
 
 <script>
+import axios from "axios";
 export default {
   created() {
     this.customer = JSON.parse(sessionStorage.customer);
@@ -105,7 +113,35 @@ export default {
     console.log("aaaaaaaaaaaaaa");
   },
   methods: {
-    Save() {},
+    Save() {
+      if(
+        this.customer.userName == "" ||
+        this.customer.city == ""||
+        this.customer.address == "" ||
+        this.customer.postcode == "" ||
+        this.customer.cardNum == "" ||
+        this.customer.cardType == ""||
+        this.customer.email== ""||
+        this.customer.tel == "" 
+      ){
+        alert("需要填写完全");
+      } 
+      else{
+        axios({
+          url: "/api/updateCustomer",
+          method: "post",
+          data: this.customer,
+        }).then((data) => {
+          if (data.data == 1) {
+            alert("edit sucessful!");
+          } else if (data.data == 0) {
+            alert("some where wrong");
+          } else {
+            alert("unknown error");
+          }
+        });
+      }
+    },
   },
   data() {
     return {
