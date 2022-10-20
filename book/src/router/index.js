@@ -10,6 +10,10 @@ const router = new VueRouter({
       component: () => import("@/components/Home.vue"),
     },
     {
+      path: "/newBook",
+      component: () => import("@/components/book/newBook.vue"),
+    },
+    {
       path: "/login",
       component: () => import("@/components/Login/login.vue"),
     },

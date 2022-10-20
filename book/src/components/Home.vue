@@ -13,9 +13,9 @@
           The new book is on the market and is in hot sale. Come and buy it
           quickly!!
         </p>
-        <a href="#" class="btn">
-          Shop Now <i class="fas fa-chevron-right"></i>
-        </a>
+        <router-link to="/newBook" class="btn">
+          Shop Now <i class="fas fa-chevron-right"></i
+        ></router-link>
       </header>
 
       <!-- Home cards 1 -->
@@ -38,8 +38,8 @@
           <img src="@/assets/pic/reBook.jpeg" alt="" />
           <h3>Recommended Books</h3>
           <p>
-            Buy an recommend One X console and double your fun with a free select
-            extra controller. Starting at $349.
+            Buy an recommend One X console and double your fun with a free
+            select extra controller. Starting at $349.
           </p>
           <a href="#">Learn More <i class="fas fa-chevron-right"></i></a>
         </div>
@@ -66,9 +66,9 @@
             rich spiritually.
           </p>
           <br /><br />
-          <router-link to="/"> <a class="btn"> Read Now <i class="fas fa-chevron-right"></i>
-          </a></router-link>
-         
+          <router-link to="/">
+            <a class="btn"> Read Now <i class="fas fa-chevron-right"></i> </a
+          ></router-link>
         </div>
       </section>
 
@@ -82,9 +82,7 @@
             every day, across the globe.
           </p>
           <br />
-          <a href="#"
-            >Click to view<i class="fas fa-chevron-right"></i
-          ></a>
+          <a href="#">Click to view<i class="fas fa-chevron-right"></i></a>
         </div>
         <div>
           <img src="./pic/3.jpg" alt="" />
@@ -94,17 +92,14 @@
             thoughtful analysis.
           </p>
           <br />
-          <a href="#">Click to view<i class="fas fa-chevron-right"></i
-          ></a>
+          <a href="#">Click to view<i class="fas fa-chevron-right"></i></a>
         </div>
         <div>
           <img src="./pic/4.jpg" alt="" />
           <h3>Stories and features</h3>
           <p>Beyond the headlines, every child has a story.</p>
           <br /><br />
-          <a href="#"
-            >Click to view <i class="fas fa-chevron-right"></i
-          ></a>
+          <a href="#">Click to view <i class="fas fa-chevron-right"></i></a>
         </div>
         <div>
           <img src="./pic/5.jpg" alt="" />
@@ -114,9 +109,7 @@
             vulnerable children.
           </p>
           <br />
-          <a href="#"
-            >Click to view <i class="fas fa-chevron-right"></i
-          ></a>
+          <a href="#">Click to view <i class="fas fa-chevron-right"></i></a>
         </div>
       </section>
 
@@ -228,7 +221,7 @@
 </template>
 
 <script>
-import TheNav from './TheNav/TheNav.vue';
+import TheNav from "./TheNav/TheNav.vue";
 window.onload = function () {
   document
     .querySelector(".menu-btn")
@@ -237,8 +230,7 @@ window.onload = function () {
     );
 };
 
-export default { components: { TheNav } ,
-};
+export default { components: { TheNav } };
 </script>
 
 <style scoped>
@@ -270,7 +262,6 @@ ul {
   max-width: 1100px;
   margin: auto;
 }
-
 
 .menu-btn {
   cursor: pointer;

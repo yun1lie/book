@@ -1,13 +1,66 @@
 <template>
-  <div class="newBook"></div>
+  <div class="newBook">
+    <TheNav></TheNav>
+    <div class="book-cards">
+      <div class="book-header"><h3>New Book</h3></div>
+      <div class="book-cont" v-for="i in this.bookList" :key="i.bookId">
+        <div class="book-card">
+          <a href="#">
+            <img :src="i.bookImage" alt="" />
+            <p>{{ i.bookName }}</p>
+            <p>{{ i.author }}</p></a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
+import TheNav from "@/components/TheNav/TheNav.vue";
+import axios from "axios";
 export default {
-
-}
+  created() {
+    axios({ url: "/api/findAllBook", method: "get" }).then((data) => {
+      console.log(data.data);
+      this.bookList = data.data;
+    });
+  },
+  data() {
+    return {
+      bookList: [],
+    };
+  },
+  components: { TheNav },
+};
 </script>
 
-<style>
+<style scpoed>
+.book-cards {
+  background-color: rgb(246,247,241);
+  display: flex;
+  width: 90%;
+  max-width: 1100px;
+  height: 700px;
+  margin: auto;
+  flex-direction: column;
+}
+.book-cards .book-header {
+  width: 100%;
+  height: 65px;
+}
+.book-cards .book-cont {
+  width: 100%;
+  height: 500px;
+  display: flex;
+  flex-wrap: wrap;
+}
 
+.book-cont .book-card {
+  padding: 3.75%;
+  width: 12.5%;
+}
+.book-cards .book-cont img {
+  width: 100%;
+}
 </style>
