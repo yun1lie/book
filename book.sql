@@ -63,7 +63,7 @@ CREATE TABLE `tb_customer`  (
 -- Records of tb_customer
 -- ----------------------------
 INSERT INTO `tb_customer` VALUES (2, 'Tom', 'aaa1', '1234561', 'beijing1', 'beijingshichaoyangqu1', '0462221', '21', '11', '11', 11, '1234561', '11@ss.com1', 1);
-INSERT INTO `tb_customer` VALUES (3, 'a', 'http://localhost:9090/static/headImg/1.jpg', 'a', 'tianjin', NULL, NULL, NULL, NULL, 'http://localhost:9090/static/level/level1.png', 294303, NULL, NULL, NULL);
+INSERT INTO `tb_customer` VALUES (3, 'a', 'http://localhost:9090/static/headImg/1.jpg', 'a', NULL, NULL, NULL, NULL, NULL, 'http://localhost:9090/static/level/level1.png', 3303, NULL, NULL, NULL);
 
 -- ----------------------------
 -- Table structure for tb_infbook

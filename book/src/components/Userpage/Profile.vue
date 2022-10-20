@@ -13,59 +13,60 @@
               <i class="el-icon-picture-outline"></i>
               headimage
             </template>
-            <img class="img" src="http://localhost:9090/static/headImg/1.jpg" />
+            <img class="img" :src="this.customer.headImage" />
           </el-descriptions-item>
           <el-descriptions-item>
             <template slot="label">
               <i class="el-icon-user"></i>
               username
             </template>
-            {{username}}
+            {{ this.customer.userName }}
           </el-descriptions-item>
           <el-descriptions-item>
             <template slot="label">
               <i class="el-icon-s-custom"></i>
               city
             </template>
-            {{city}}
+            {{ customer.city }}
           </el-descriptions-item>
           <el-descriptions-item>
             <template slot="label">
               <i class="el-icon-odometer">address</i>
             </template>
-           {{address}}
+            {{ customer.address }}
           </el-descriptions-item>
           <el-descriptions-item>
             <template slot="label"> postcode </template>
-            <el-tag size="small">{{ postcode }}</el-tag>
+            <!-- <el-tag size="small"></el-tag> -->
+            {{ customer.postCode }}
           </el-descriptions-item>
           <el-descriptions-item>
             <template slot="label">
               <i class="el-icon-message"></i>
               Email
             </template>
-            {{email}}
+            {{ customer.email }}
           </el-descriptions-item>
           <el-descriptions-item>
             <template slot="label">
               <i class="el-icon-mobile-phone"></i>
               Tel
             </template>
-           {{mobilePhoneNumber}}
+            {{ customer.tel }}
           </el-descriptions-item>
           <el-descriptions-item>
             <template slot="label">
               <i class="el-icon-location-outline"></i>
-              cartype
+              cardtype
             </template>
-            {{cartype}}
+            {{ customer.cardType }}
           </el-descriptions-item>
           <el-descriptions-item>
             <template slot="label">
               <i class="el-icon-office-building"></i>
               card Number
             </template>
-            {{cardNum}}
+            {{ customer.cardNum }}
           </el-descriptions-item>
 
           <el-descriptions-item>
@@ -73,7 +74,7 @@
               <i class="el-icon-basketball"></i>
               money
             </template>
-           {{money}}
+            {{ customer.amount }}
           </el-descriptions-item>
         </el-descriptions>
       </el-card>
@@ -83,6 +84,10 @@
 
 <script>
 export default {
+  created() {
+    this.customer = JSON.parse(sessionStorage.customer);
+  },
+
   methods: {
     editProfile() {
       let a = document.getElementsByClassName("readinput");
