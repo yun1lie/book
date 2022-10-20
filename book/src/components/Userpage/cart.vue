@@ -70,6 +70,7 @@
                     size="medium"
                     type="danger"
                     v-on:click="delGood(scope.row.id)"
+                    @click="min1"
                     >delete</el-button
                   >
                 </template>
@@ -255,6 +256,10 @@ export default {
   },
   components: {},
   methods: {
+    min1() {
+      alert("aaaaaaa");
+      console.log("ccccccccccccccccc");
+    },
     buy() {
       if (this.customer.amount < this.cartTotalPrice) {
         alert("Insufficient balance, please recharge");
