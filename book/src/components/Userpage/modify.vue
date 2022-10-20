@@ -11,8 +11,9 @@
         </p>
       </div>
       <div>
+        <span style=" margin-left: 13%">User Name:</span>
         <input
-          style="width: 60%; margin-left: 20%; margin-bottom: 2%"
+          style="width: 60%; margin-left: 2%; margin-bottom: 2%"
           placeholder="username"
           v-model="customer.userName"
         />
@@ -115,6 +116,7 @@ export default {
       }).then((data) => {
         if (data.data == 1) {
           alert("edit sucessful!");
+          location.reload();
         } else if (data.data == 0) {
           alert("some where wrong");
         } else {
@@ -217,5 +219,22 @@ export default {
 .butt1 {
   margin: 0 auto;
   width: 50px;
+}
+
+input{
+  outline-style: none ;
+    border: 1px solid #ccc; 
+    border-radius: 3px;
+    padding: 13px 14px;
+    width: 300px;
+    font-size: 14px;
+    font-weight: 700;
+    font-family: "Microsoft soft";
+}
+input:focus{
+    border-color: #66afe9;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6)
 }
 </style>

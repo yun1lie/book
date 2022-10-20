@@ -9,6 +9,7 @@
             :to="{
               name: 'details',
               query: {
+                bookId: i.bookId,
                 bookImage: i.bookImage,
                 bookName: i.bookName,
                 author: i.author,
@@ -16,15 +17,15 @@
                 bookconcern: i.bookConcern,
                 publishtime: i.publishTime,
                 bookprice: i.bookPrice,
-                infbook: i.infbook,
-                infauthor: i.infauthor
+                // infbook: i.infbook,
+                // infauthor: i.infauthor
               },
             }"
           >
             <img :src="i.bookImage" alt="" />
             <p>{{ i.bookName }}</p>
             <p>{{ i.author }}</p>
-            <div style="display: none">{{i.bookNum}}{{i.bookConcern}}{{i.publishTime}}{{i.bookPrice}}{{i.infbook}}{{i.infauthor}}</div>
+            <div style="display: none">{{i.bookNum}}{{i.bookConcern}}{{i.publishTime}}{{i.bookPrice}}{{i.infbook}}{{i.infauthor}}{{i.id}}</div>
           </router-link>
         </div>
       </div>

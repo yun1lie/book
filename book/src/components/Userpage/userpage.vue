@@ -41,13 +41,6 @@
               <span slot="title">View Cart</span>
             </el-menu-item>
             <el-menu-item
-              index="orders"
-              :route="{ name: 'orders', params: '' }"
-            >
-              <i class="el-icon-document"></i>
-              <span slot="title">Submitted Orders</span>
-            </el-menu-item>
-            <el-menu-item
               index="modify"
               :route="{ name: 'modify', params: $route.params.id }"
             >

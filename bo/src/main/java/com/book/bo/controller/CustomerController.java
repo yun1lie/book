@@ -84,6 +84,12 @@ public class CustomerController {
     int emptyCart(@RequestBody Customer customer) {
         return customerMapper.emptyCart(customer);
     }
+
+    //add cart
+    @PostMapping("/addCart")
+    int addCart(@RequestBody Cart cart){
+        return customerMapper.addCart(cart);
+    }
     
 
 
