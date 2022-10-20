@@ -16,7 +16,7 @@
         <router-link to="/newBook" class="btn">
           Shop Now <i class="fas fa-chevron-right"></i
         ></router-link>
-                <router-link to="/newBook"></router-link>
+        <router-link to="/newBook"></router-link>
       </header>
 
       <!-- Home cards 1 -->
@@ -35,7 +35,9 @@
           <h3>Best selling books</h3>
           <p>The hottest book in October 2022</p>
           <br /><br />
-          <a href="#">Learn More <i class="fas fa-chevron-right"></i></a>
+          <router-link to="/newBook"
+            >Learn More <i class="fas fa-chevron-right"></i
+          ></router-link>
         </div>
         <div>
           <img src="@/assets/pic/reBook.jpeg" alt="" />
@@ -44,7 +46,9 @@
             Buy an recommend One X console and double your fun with a free
             select extra controller. Starting at $349.
           </p>
-          <a href="#">Learn More <i class="fas fa-chevron-right"></i></a>
+          <router-link to="/newBook"
+            >Learn More <i class="fas fa-chevron-right"></i
+          ></router-link>
         </div>
         <div>
           <img src="@/assets/pic/lBook.jpeg" alt="" />
@@ -53,7 +57,9 @@
             Expect more. World class performance, with more privacy, more
             productivity, and more value.
           </p>
-          <a href="#">Learn More <i class="fas fa-chevron-right"></i></a>
+          <router-link to="/newBook"
+            >Learn More <i class="fas fa-chevron-right"></i
+          ></router-link>
         </div>
       </section>
 
@@ -69,9 +75,9 @@
             rich spiritually.
           </p>
           <br /><br />
-          <router-link to="/">
-            <a class="btn"> Read Now <i class="fas fa-chevron-right"></i> </a
-          ></router-link>
+          <router-link to="/" class="btn">
+            Read Now <i class="fas fa-chevron-right"></i>
+          </router-link>
         </div>
       </section>
 
@@ -85,7 +91,9 @@
             every day, across the globe.
           </p>
           <br />
-          <a href="#">Click to view<i class="fas fa-chevron-right"></i></a>
+          <router-link to="/newBook"
+            >Click to view<i class="fas fa-chevron-right"></i
+          ></router-link>
         </div>
         <div>
           <img src="./pic/3.jpg" alt="" />
@@ -95,14 +103,18 @@
             thoughtful analysis.
           </p>
           <br />
-          <a href="#">Click to view<i class="fas fa-chevron-right"></i></a>
+          <router-link to="/newBook"
+            >Click to view<i class="fas fa-chevron-right"></i
+          ></router-link>
         </div>
         <div>
           <img src="./pic/4.jpg" alt="" />
           <h3>Stories and features</h3>
           <p>Beyond the headlines, every child has a story.</p>
           <br /><br />
-          <a href="#">Click to view <i class="fas fa-chevron-right"></i></a>
+          <router-link to="/newBook"
+            >Click to view <i class="fas fa-chevron-right"></i
+          ></router-link>
         </div>
         <div>
           <img src="./pic/5.jpg" alt="" />
@@ -112,7 +124,9 @@
             vulnerable children.
           </p>
           <br />
-          <a href="#">Click to view <i class="fas fa-chevron-right"></i></a>
+          <router-link to="/newBook"
+            >Click to view <i class="fas fa-chevron-right"></i
+          ></router-link>
         </div>
       </section>
 
@@ -124,30 +138,30 @@
             Microsoft will be carbon negative by 2030 and by 2050 we will remove
             all carbon the company has emitted since it was founded in 1975
           </p>
-          <a href="#" class="btn">
+          <router-link to="/newBook" class="btn">
             Learn More <i class="fas fa-chevron-right"></i>
-          </a>
+          </router-link>
         </div>
       </section>
 
       <!-- Follow -->
       <section class="follow">
         <p>Follow Microsoft</p>
-        <a href="https://facebook.com">
+        <router-link to="/newBook">
           <img src="https://i.ibb.co/LrVMXNR/social-fb.png" alt="Facebook" />
-        </a>
-        <a href="https://twitter.com">
+        </router-link>
+        <router-link to="/newBook">
           <img
             src="https://i.ibb.co/vJvbLwm/social-twitter.png"
             alt="Twitter"
           />
-        </a>
-        <a href="https://linkedin.com">
+        </router-link>
+        <router-link to="/newBook">
           <img
             src="https://i.ibb.co/b30HMhR/social-linkedin.png"
             alt="Linkedin"
           />
-        </a>
+        </router-link>
       </section>
     </div>
     <!-- Links -->
@@ -155,51 +169,57 @@
       <div class="links-inner">
         <ul>
           <li><h3>What's New</h3></li>
-          <li><a href="#">Surface Pro X</a></li>
-          <li><a href="#">Surface Laptop 3</a></li>
-          <li><a href="#">Surface Pro 7</a></li>
-          <li><a href="#">Windows 10 apps</a></li>
-          <li><a href="#">Office apps</a></li>
+          <li><router-link to="/newBook">Surface Pro X</router-link></li>
+          <li><router-link to="/newBook">Surface Laptop 3</router-link></li>
+          <li><router-link to="/newBook">Surface Pro 7</router-link></li>
+          <li><router-link to="/newBook">Windows 10 apps</router-link></li>
+          <li><router-link to="/newBook">Office apps</router-link></li>
         </ul>
         <ul>
           <li><h3>Microsoft Store</h3></li>
-          <li><a href="#">Account Profile</a></li>
-          <li><a href="#">Download Center</a></li>
-          <li><a href="#">Microsoft Store support</a></li>
-          <li><a href="#">Returns</a></li>
-          <li><a href="#">Older tracking</a></li>
+          <li><router-link to="/newBook">Account Profile</router-link></li>
+          <li><router-link to="/newBook">Download Center</router-link></li>
+          <li>
+            <router-link to="/newBook">Microsoft Store support</router-link>
+          </li>
+          <li><router-link to="/newBook">Returns</router-link></li>
+          <li><router-link to="/newBook">Older tracking</router-link></li>
         </ul>
         <ul>
           <li><h3>Education</h3></li>
-          <li><a href="#">Microsfot in education</a></li>
-          <li><a href="#">Office for students</a></li>
-          <li><a href="#">Office 365 for schools</a></li>
-          <li><a href="#">Deals for studentss</a></li>
-          <li><a href="#">Microsfot Azure</a></li>
+          <li>
+            <router-link to="/newBook">Microsfot in education</router-link>
+          </li>
+          <li><router-link to="/newBook">Office for students</router-link></li>
+          <li>
+            <router-link to="/newBook">Office 365 for schools</router-link>
+          </li>
+          <li><router-link to="/newBook">Deals for studentss</router-link></li>
+          <li><router-link to="/newBook">Microsfot Azure</router-link></li>
         </ul>
         <ul>
           <li><h3>Enterprise</h3></li>
-          <li><a href="#">Azure</a></li>
-          <li><a href="#">AppSource</a></li>
-          <li><a href="#">Automotive</a></li>
-          <li><a href="#">Government</a></li>
-          <li><a href="#">Healthcare</a></li>
+          <li><router-link to="/newBook">Azure</router-link></li>
+          <li><router-link to="/newBook">AppSource</router-link></li>
+          <li><router-link to="/newBook">Automotive</router-link></li>
+          <li><router-link to="/newBook">Government</router-link></li>
+          <li><router-link to="/newBook">Healthcare</router-link></li>
         </ul>
         <ul>
           <li><h3>Developer</h3></li>
-          <li><a href="#">Visual Studio</a></li>
-          <li><a href="#">Windowszs Dev Center</a></li>
-          <li><a href="#">Developer Network</a></li>
-          <li><a href="#">TechNet</a></li>
-          <li><a href="#">Microsoft Developer</a></li>
+          <li><router-link to="/newBook">Visual Studio</router-link></li>
+          <li><router-link to="/newBook">Windowszs Dev Center</router-link></li>
+          <li><router-link to="/newBook">Developer Network</router-link></li>
+          <li><router-link to="/newBook">TechNet</router-link></li>
+          <li><router-link to="/newBook">Microsoft Developer</router-link></li>
         </ul>
         <ul>
           <li><h3>Company</h3></li>
-          <li><a href="#">Careers</a></li>
-          <li><a href="#">About Microsoft</a></li>
-          <li><a href="#">Company news</a></li>
-          <li><a href="#">Privacy at Microsoft</a></li>
-          <li><a href="#">Inverstors</a></li>
+          <li><router-link to="/newBook">Careers</router-link></li>
+          <li><router-link to="/newBook">About Microsoft</router-link></li>
+          <li><router-link to="/newBook">Company news</router-link></li>
+          <li><router-link to="/newBook">Privacy at Microsoft</router-link></li>
+          <li><router-link to="/newBook">Inverstors</router-link></li>
         </ul>
       </div>
     </section>
@@ -209,14 +229,16 @@
       <div class="footer-inner">
         <div><i class="fas fa-globe fa-2x"></i> English (United States)</div>
         <ul>
-          <li><a href="#">Sitemap</a></li>
-          <li><a href="#">Contact Microsoft</a></li>
-          <li><a href="#">Privacy & cookies</a></li>
-          <li><a href="#">Terms of use</a></li>
-          <li><a href="#">Trademarks</a></li>
-          <li><a href="#">Safety & eco</a></li>
-          <li><a href="#">About our ads</a></li>
-          <li><a href="#">&copy; Microsoft 2020</a></li>
+          <li><router-link to="/newBook">Sitemap</router-link></li>
+          <li><router-link to="/newBook">Contact Microsoft</router-link></li>
+          <li><router-link to="/newBook">Privacy & cookies</router-link></li>
+          <li><router-link to="/newBook">Terms of use</router-link></li>
+          <li><router-link to="/newBook">Trademarks</router-link></li>
+          <li><router-link to="/newBook">Safety & eco</router-link></li>
+          <li><router-link to="/newBook">About our ads</router-link></li>
+          <li>
+            <router-link to="/newBook">&copy; Microsoft 2020</router-link>
+          </li>
         </ul>
       </div>
     </footer>
@@ -303,7 +325,8 @@ ul {
 .showcase {
   width: 100%;
   height: 400px;
-  background: url("@/assets/pic/book.jpeg") no-repeat center center/cover;
+  background: url("@/assets/pic/book.jpeg") no-repeat center
+    center/cover;
   display: flex;
   flex-direction: column;
   align-items: center;
