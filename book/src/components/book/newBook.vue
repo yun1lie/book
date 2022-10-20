@@ -3,8 +3,8 @@
     <TheNav></TheNav>
     <div class="book-cards">
       <div class="book-header"><h3>&nbsp;&nbsp;&nbsp;&nbsp;New Book</h3></div>
-      <div class="book-cont" v-for="i in this.bookList" :key="i.bookId">
-        <div class="book-card">
+      <div class="book-cont">
+        <div class="book-card" v-for="i in this.bookList" :key="i.bookId">
           <a href="#">
             <img :src="i.bookImage" alt="" />
             <p>{{ i.bookName }}</p>
@@ -37,7 +37,7 @@ export default {
 
 <style scpoed>
 .book-cards {
-  background-color: rgb(246,247,241);
+  background-color: rgb(246, 247, 241);
   display: flex;
   width: 90%;
   max-width: 1100px;
@@ -63,7 +63,7 @@ export default {
 .book-cards .book-cont img {
   width: 100%;
 }
-a{
+a {
   color: black;
   text-decoration: none;
 }
