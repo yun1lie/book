@@ -14,8 +14,8 @@
       <div>
         <el-input
           style="width: 60%; margin-left: 20%; margin-bottom: 2%"
-          :placeholder="this.username"
-          v-model="edit.username"
+          placeholder="username"
+          v-model="this.customer.userName"
           clearable
         >
           <template slot="prepend">Username:</template>
@@ -23,51 +23,59 @@
       </div>
       <div>
         <el-card>
-          <el-descriptions class="margin-top" title="简介" :column="2" border>
+          <el-descriptions
+            class="margin-top"
+            title="profile"
+            :column="2"
+            border
+          >
             <el-descriptions-item>
               <template slot="label">
                 <i class="el-icon-s-custom"></i>
                 city
               </template>
-              <el-input  :placeholder="this.city" v-model="edit.city" />
+              <el-input placeholder="city" v-model="this.customer.city" />
             </el-descriptions-item>
             <el-descriptions-item>
               <template slot="label">
                 <i class="el-icon-odometer">address</i>
               </template>
-              <el-input  :placeholder="this.address" v-model="edit.address" />
+              <el-input placeholder="address" v-model="this.customer.address" />
             </el-descriptions-item>
             <el-descriptions-item>
               <template slot="label"> postcode </template>
-               <el-input  :placeholder="this.postcode" v-model="edit.postcode" />
+              <el-input placeholder="postcode" v-model="this.customer.postCode" />
             </el-descriptions-item>
             <el-descriptions-item>
               <template slot="label">
                 <i class="el-icon-message"></i>
                 Email
               </template>
-              <el-input  :placeholder="this.email" v-model="edit.email" />
+              <el-input placeholder="email" v-model="this.customer.email" />
             </el-descriptions-item>
             <el-descriptions-item>
               <template slot="label">
                 <i class="el-icon-mobile-phone"></i>
                 Tel
               </template>
-              <el-input  :placeholder="this.mobilePhoneNumber" v-model="edit.mobilePhoneNumber" />
+              <el-input
+                placeholder="mobilePhoneNumber"
+                v-model="this.customer.tel"
+              />
             </el-descriptions-item>
             <el-descriptions-item>
               <template slot="label">
                 <i class="el-icon-location-outline"></i>
-                cartype
+                cardtype
               </template>
-              <el-input  :placeholder="this.cartype" v-model="edit.cartype" />
+              <el-input placeholder="cardtype" v-model="this.customer.cardType" />
             </el-descriptions-item>
             <el-descriptions-item>
               <template slot="label">
                 <i class="el-icon-office-building"></i>
                 card Number
               </template>
-              <el-input  :placeholder="this.card" v-model="edit.card" />
+              <el-input placeholder="card" v-model="this.customer.cardNum" />
             </el-descriptions-item>
 
             <el-descriptions-item>
@@ -97,6 +105,9 @@
 
 <script>
 export default {
+  created() {
+    this.customer = JSON.parse(sessionStorage.customer);
+  },
   methods: {
     editProfile() {
       let a = document.getElementsByClassName("readinput");
@@ -113,7 +124,7 @@ export default {
     return {
       edit: {
         username: "",
-        address:"",
+        address: "",
         email: "",
         mobilePhoneNumber: "",
         cartype: "",

@@ -90,6 +90,7 @@ export default {
       data: this.customer,
     }).then((data) => {
       this.customer = data.data[0];
+      sessionStorage.setItem('customer', JSON.stringify(this.customer));
 
     });
   },
