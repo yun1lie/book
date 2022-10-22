@@ -46,4 +46,6 @@ public interface CustomerMapper {
     @Delete("DELETE FROM `book`.`tb_cart` WHERE `userid` = #{userId}")
     int emptyCart(Customer customer);
 
+    @Insert("INSERT INTO `book`.`tb_cart`(`userId`, `bookId`, `quantity`) VALUES (#{userid}, #{productName}, 1)")
+    int addCart(Cart cart);
 }

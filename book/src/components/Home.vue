@@ -75,7 +75,7 @@
             rich spiritually.
           </p>
           <br /><br />
-          <router-link to="/" class="btn">
+          <router-link to="/newBook" class="btn">
             Read Now <i class="fas fa-chevron-right"></i>
           </router-link>
         </div>

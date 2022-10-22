@@ -13,11 +13,12 @@
         <li>
           <router-link to="/"><a>Home</a></router-link>
         </li>
-        <li><a href="#">New Books</a></li>
-        <li><a href="#">Best selling books</a></li>
-        <li><a href="#">Recommended Books</a></li>
-        <li><a href="#">Search books</a></li>
-        <li><a href="#">Book classification</a></li>
+        
+        <li><router-link to="/newBook"><a href="#">New Books</a></router-link></li>
+        <li><router-link to="/newBook"><a href="#">Best selling books</a></router-link></li>
+        <li><router-link to="/newBook"><a href="#">Recommended Books</a></router-link></li>
+        <li><router-link to="/newBook"><a href="#">Search books</a></router-link></li>
+        <li><router-link to="/newBook"><a href="#">Book classification</a></router-link></li>
       </ul>
 
       <ul class="right-menu" v-if="this.customer == null">
